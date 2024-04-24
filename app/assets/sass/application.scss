@@ -1,6 +1,20 @@
 //
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+//
 
 // Add extra styles here
+
+body, h1, h2, h3, h4, h5, p, a, span, .govuk-heading-m, .govuk-heading-l, .govuk-heading-xl, .govuk-heading-s, .govuk-list, .govuk-fieldset__legend, .govuk-label, html, body, form, fieldset, table, tr, td, img, button  {
+  font-family: "Helvetica", "Arial", sans-serif !important;
+}
+
+
+.govuk-button {
+  background-color: #003078;
+}
+
+
+.govuk-button:hover {
+  background-color: #05005a;
+}

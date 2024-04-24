@@ -1,0 +1,48 @@
+{% extends "layouts/bespoke.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form class="form" action="/short-textinput-accessible" method="post">
+
+        {{ govukInput({
+      label: {
+        text: "What is your account number?",
+        classes: "govuk-label--l",
+        isPageHeading: true
+      },
+      classes: "govuk-input--width-10",
+      hint: {
+        html: "<p>This is a paragraph of text.</p><p>This is another paragraph of text</p>"
+      },
+      id: "account-number",
+      name: "accountNumber",
+      inputmode: "numeric",
+      spellcheck: false
+    }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "layouts/bespoke.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Tell us why you left your studies
+      </h1>
+
+      <form class="form" action="/short-textinput" method="post">
+
+        <p>Information</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+          </ul>
+
+          <p>Information</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>list item</li>
+              <li>list item</li>
+              <li>list item</li>
+            </ul>
+
+
+
+            {{ govukTextarea({
+        name: "moreDetail",
+        id: "more-detail",
+        label: {
+          text: "Can you provide more detail?"
+        }
+      }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

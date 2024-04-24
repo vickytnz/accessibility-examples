@@ -1,0 +1,57 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+
+
+{% block header %}
+
+<header class="govuk-header" style="background-color: #b81e70; " data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container" style="border-bottom: 10px solid #6f72af">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+      Accessibility example
+      </a>
+    </div>
+  </div>
+</header>
+
+
+{% endblock %}
+
+
+
+
+{% block footer %}
+<footer class="govuk-footer">
+  <div class="govuk-width-container">
+    <div class="govuk-footer__navigation">
+      <div class="govuk-footer__section govuk-grid-column-two-thirds" >
+        <h2 class="govuk-footer__heading govuk-heading-m">Links</h2>
+
+          <ul class="govuk-footer__list"> <!-- govuk-footer__list--columns-2" -->
+            <li class="govuk-footer__list-item"> <a  class="govuk-footer__link" href="/long-question">Long question</a> and <a class="govuk-footer__link" href="/long-question-accessible">accessible long question version</a></li>
+              <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="/long-textarea">Long textarea</a> and <a class="govuk-footer__link" href="/long-textarea-accessible">accessible textarea version</a></li>
+              <li class="govuk-footer__list-item"><a  class="govuk-footer__link" href="/short-textinput">Short text input</a> and <a class="govuk-footer__link" href="/short-textinput-accessible">accessible text input version</a>
+          </ul>
+      </div>
+      <div class="govuk-footer__section govuk-grid-column-one-third">
+        <h2 class="govuk-footer__heading govuk-heading-m">Admin</h2>
+        <ul class="govuk-footer__list">
+          <li class="govuk-footer__list-item">
+            <a href="/manage-prototype">Manage your prototype</a>
+          </li>
+          </ul>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</footer>
+
+{% endblock %}

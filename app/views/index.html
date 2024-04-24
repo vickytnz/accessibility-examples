@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/bespoke.html" %}
 
 {% set pageName="Home" %}
 
@@ -7,13 +7,17 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
 
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/long-question">Long question</a> and <a href="/long-question-accessible">accessible long question version</a></li>
+        <li><a href="/long-textarea">Long textarea</a> and <a href="/long-textarea-accessible">accessible textarea version</a></li>
+        <li><a href="/short-textinput">Short text input</a> and <a href="/short-textinput-accessible">accessible text input version</a>
+    </ul>
+
   </div>
 </div>
 
