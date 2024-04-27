@@ -20,34 +20,23 @@
 <P>Series of common accessibility mistakes on forms - even when done with the accessibilty-focused GOV.UK Design System. Examples cycle through a common mistake, the same version with an explanation and then a better version.</p>
 
 
-{% set title = [
-  {name: 'List', url: "list"},
-  {name: 'Long question', url: "long-question"},
-  {name: 'Long text area', url: "long-textarea"},
-  {name: 'Short text area', url: "short-textarea"}
-  ] %}
+</div>
+</div>
 
+<div class="govuk-grid-row">
 
-  {% set list = [
-    {name: 'Original', url: 'index'},
-    {name: 'Original with explanation', url: 'index-explanation'},
-  {name: 'Accessible', url: 'accessible'}
-  ]%}
-
-
-
-
-{% for item in title %}
+{% for item in title %} {# variables are declared in layouts/bespoke.html #}
+  <div class="govuk-grid-column-one-third">
 <h2 class="govuk-heading-m">{{ item.name }}</h2>
     <ul class="govuk-list govuk-list--bullet">
 {% for iterator in list %}
       <li><a href="/{{item.url}}/{{iterator.url}}">{{iterator.name  }}</a></li>
 {% endfor %}
 </ul>
+  </div>
 {% endfor %}
 
 
-  </div>
 </div>
 
 {% endblock %}

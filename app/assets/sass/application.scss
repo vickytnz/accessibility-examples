@@ -21,6 +21,11 @@ body, h1, h2, h3, h4, h5, p, a, span, .govuk-heading-m, .govuk-heading-l, .govuk
   background-color: #05005a;
 }
 
+.option-toggle {
+    width: 100%;
+    text-align: right;
+    display: inline-block;
+}
 
 .option-toggle-select__list{
     float: right;

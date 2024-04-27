@@ -26,7 +26,7 @@
             text: "Date of birth"
           },
           {
-            text: "5 January 1978"
+            text: "5 1 1978"
           }
         ],
         [
@@ -48,6 +48,27 @@
       ]
     }) }}
 
+
+    {{ govukRadios({
+             name: "details",
+             fieldset: {
+               legend: {
+                 text: "Are these details correct?",
+                 isPageHeading: false,
+                 classes: "govuk-fieldset__legend--m"
+               }
+             },
+             items: [
+               {
+                 value: "yes",
+                 text: "Yes"
+               },
+               {
+                 value: "no",
+                 text: "No"
+               }
+             ]
+           }) }}
 
 
 {% endblock %}

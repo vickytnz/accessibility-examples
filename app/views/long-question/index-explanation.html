@@ -1,5 +1,14 @@
 {% set link = 'accessible' %}
 {% set currentPage = "index-explanation" %}
-{% set explanation = " A complex question must have a header, information and then the question - without this it is difficult for screen readers to show that there is context or for people with memory issues to remember what is being asked." %}
-{% set explanationURL = "https://design-system.service.gov.uk/patterns/question-pages/" %}
+
+{% set explanationDescription = "A complex question must have a header, information and then the question - without this it is difficult for screen readers to show that there is context or for people with memory issues to remember what is being asked." %}
+
+{% set explanationLinks =  [
+  {
+    text: "Find out about question pages on GOV.UK",
+    href: "https://design-system.service.gov.uk/patterns/question-pages/"
+  }
+]
+%}
+
 {% include "/" + folder +  "/index.html" %}

@@ -1,0 +1,17 @@
+{% set link = 'accessible' %}
+{% set currentPage = "index-explanation" %}
+
+{% set explanationDescription = "Accordions hide key information. Restructuring the information and spliting it on different places is easier to test." %}
+
+{% set explanationLinks =  [
+
+  {
+    text: "Accordions on the GOV.UK Design System",
+    href: "https://design-system.service.gov.uk/components/accordion/"
+  },
+  { text: "Don't be afraid of the big long page by Amy Hupe",
+    href: "https://amyhupe.co.uk/articles/dont-be-afraid-of-the-big-long-page/"
+}
+]
+%}
+{% include "/" + folder +  "/index.html" %}

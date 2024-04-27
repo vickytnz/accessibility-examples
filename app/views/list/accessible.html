@@ -106,5 +106,26 @@
     }) }}
 -->
 
+{{ govukRadios({
+         name: "details",
+         fieldset: {
+           legend: {
+             text: "Are these details correct?",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         items: [
+           {
+             value: "yes",
+             text: "Yes"
+           },
+           {
+             value: "no",
+             text: "No"
+           }
+         ]
+       }) }}
+
 
 {% endblock %}

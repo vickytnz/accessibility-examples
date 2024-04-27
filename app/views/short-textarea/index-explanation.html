@@ -1,5 +1,15 @@
 {% set link = 'accessible' %}
 {% set currentPage = "index-explanation" %}
-{% set explanation = "A lot of text between the heading and the question means that it will be missed by screenreaders." %}
-{% set explanationURL = "https://design-system.service.gov.uk/patterns/question-pages/" %}
+
+{% set explanationDescription = "A lot of text between the heading and the question means that it will be missed by screenreaders." %}
+
+{% set explanationLinks =  [
+  {
+    text: "Find out about question pages on GOV.UK",
+    href: "https://design-system.service.gov.uk/patterns/question-pages/"
+  }
+]
+%}
+
+
 {% include "/" + folder +  "/index.html" %}

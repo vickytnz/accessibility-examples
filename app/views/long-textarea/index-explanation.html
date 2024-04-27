@@ -1,5 +1,15 @@
 {% set link = 'accessible' %}
 {% set currentPage = "index-explanation" %}
-{% set explanation = "Input fields need infomation above the field" %}
-{% set explanationURL = "https://design-system.service.gov.uk/components/text-input/" %}
+
+{% set explanationDescription = "Input fields need infomation above the field" %}
+
+{% set explanationLinks =  [
+  {
+    text: "Find out about text input on GOV.UK",
+    href: "https://design-system.service.gov.uk/components/text-input/"
+  }
+]
+%}
+
+
 {% include "/" + folder +  "/index.html" %}

@@ -1,5 +1,21 @@
 {% set link = 'accessible' %}
 {% set currentPage = "index-explanation" %}
-{% set explanation = "A table is different from a definition list. It will not render correctly with screen readers." %}
-{% set explanationURL = "https://design-system.service.gov.uk/components/table/" %}
+
+{% set explanationDescription = "A table is different from a definition list. It will not render correctly with screen readers. Months are also easier to check and avoid ambiguity if they are shown using words." %}
+
+{% set explanationLinks =  [{
+    text: "Tables information in the GOV.UK Design System",
+    href: "https://design-system.service.gov.uk/components/table/"
+  },
+  {
+    text: "Definition lists information the GOV.UK Design System",
+    href: "https://design-system.service.gov.uk/components/table/"
+  },
+  {
+    text: "GOV.UK content guide for dates",
+    href: "https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style"
+  }
+]
+%}
+
 {% include "/" + folder +  "/index.html" %}
