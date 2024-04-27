@@ -10,6 +10,8 @@ body, h1, h2, h3, h4, h5, p, a, span, .govuk-heading-m, .govuk-heading-l, .govuk
 }
 
 
+
+
 .govuk-button {
   background-color: #003078;
 }
@@ -17,4 +19,24 @@ body, h1, h2, h3, h4, h5, p, a, span, .govuk-heading-m, .govuk-heading-l, .govuk
 
 .govuk-button:hover {
   background-color: #05005a;
+}
+
+
+.option-toggle-select__list{
+    float: right;
+    margin-top: 1em;
+    text-align: right;
+}
+
+.option-toggle-select__list-item {
+    display: inline-block;
+}
+
+.option-toggle-select__list-item:not(:last-child):after, .footer-links-list:not(:last-child):after {
+    border-right: .09375em solid #0b0c0c;
+    content: "";
+    display: inline-block;
+    height: 1em;
+    position: relative;
+    top: .1875em;
 }

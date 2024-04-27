@@ -6,6 +6,80 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 
+{% set title = [
+  {name: 'List', url: "list"},
+  {name: 'Long question', url: "long-question"},
+  {name: 'Long text area', url: "long-textarea"},
+  {name: 'Short text area', url: "short-textarea"}
+  ] %}
+
+
+  {% set list = [
+    {name: 'Original', url: 'index'},
+    {name: 'Original with explanation', url: 'index-explanation'},
+  {name: 'Accessible', url: 'accessible'}
+  ]%}
+
+
+
+
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Example"
+  },
+  html: 'This is not a real service – it is just for training purposes.'
+}) }}
+
+{% block headIcons %}
+<link rel="apple-touch-icon" sizes="180x180" href="{{asset_path}}favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{asset_path}}favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset_path}}favicon/favicon-16x16.png">
+<link rel="manifest" href="{{asset_path}}favicon/site.webmanifest">
+{% endblock %}
+
+{% if not backHidden %}
+
+{% set list = [
+  {name: 'Original', url: 'index'},
+  {name: 'Original with explanation', url: 'index-explanation'},
+{name: 'Accessible', url: 'accessible'}
+]%}
+
+<nav class="option-toggle" aria-label="Option switcher">
+  <ul class="option-toggle-select__list">
+
+    {% for item in list %}
+
+    <li class="option-toggle-select__list-item">
+
+{% if not (item.url == currentPage ) %}
+      <a href="{{item.url}}" rclass="govuk-link">
+
+        <span class="govuk-visually-hidden">Change to</span>
+{% endif %}
+        <span aria-hidden="true">{{item.name}}</span>
+{% if not (item.url == currentURL ) %}           </a> {% endif %}
+    </li>
+
+{% endfor %}
+  </ul>
+</nav>
+
+<!--
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+-->
+
+{% endif %}
+{% endblock %}
+
+
+
 
 {% block header %}
 
@@ -13,17 +87,58 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   <div class="govuk-header__container govuk-width-container" style="border-bottom: 10px solid #6f72af">
     <div class="govuk-header__logo">
       <a href="/" class="govuk-header__link govuk-header__link--homepage">
-      Accessibility example
+      {{serviceName}}
       </a>
     </div>
   </div>
 </header>
 
 
+
+
+
 {% endblock %}
 
 
+{% block content %}
 
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form class="form" action="/{{folder}}/{{link}}" method="post">
+
+{% if explanation %}
+
+{% set html %}
+  <p > <!-- class="govuk-notification-banner__heading"  -->
+    {{explanation}}
+    {% if explanationURL %}
+    <a href="{{explanationURL}}">View details on the GOV.UK design system</a>. <!-- class="govuk-notification-banner__link" -->
+  </p>{% endif %}
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  titleText: "Why this page is not accessible"
+}) }}
+{% endif %}
+
+{% block form %}
+{% endblock %}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+<p><a href="/index">Go to home page </a></p>
+    </div>
+  </div>
+{% endblock %}
 
 {% block footer %}
 <footer class="govuk-footer">
@@ -32,20 +147,31 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
       <div class="govuk-footer__section govuk-grid-column-two-thirds" >
         <h2 class="govuk-footer__heading govuk-heading-m">Links</h2>
 
+
           <ul class="govuk-footer__list"> <!-- govuk-footer__list--columns-2" -->
-            <li class="govuk-footer__list-item"> <a  class="govuk-footer__link" href="/long-question">Long question</a> and <a class="govuk-footer__link" href="/long-question-accessible">accessible long question version</a></li>
-              <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="/long-textarea">Long textarea</a> and <a class="govuk-footer__link" href="/long-textarea-accessible">accessible textarea version</a></li>
-              <li class="govuk-footer__list-item"><a  class="govuk-footer__link" href="/short-textinput">Short text input</a> and <a class="govuk-footer__link" href="/short-textinput-accessible">accessible text input version</a>
-          </ul>
+
+        {% for item in title %}
+          <li class="govuk-footer__list-item "> {{ item.name }}:
+
+        {% for iterator in list %}
+              <a href="/{{item.url}}/{{iterator.url}}">{{iterator.name  }}</a>
+        {% endfor %}{% endfor %}
+        </li>
+
+
+              </ul>
       </div>
       <div class="govuk-footer__section govuk-grid-column-one-third">
-        <h2 class="govuk-footer__heading govuk-heading-m">Admin</h2>
-        <ul class="govuk-footer__list">
+        <h2 class="govuk-footer__heading govuk-heading-m">Notes</h2>
+    <!--    <ul class="govuk-footer__list">
           <li class="govuk-footer__list-item">
             <a href="/manage-prototype">Manage your prototype</a>
           </li>
           </ul>
-      </div>
+      </div> -->
+
+      <P class="govuk-footer__meta-custom">Series of common accessibility mistakes on forms as compiled by Vicky Teinaki and Lori Thompson. Source code is available as a <a href="https://github.com/vickytnz/accessibility-examples">Github repository</a>.</p>
+
     </div>
 
 

@@ -1,0 +1,53 @@
+{% if not link %}{% set link = 'index-explanation' %}{% endif %}
+{% if not currentPage %}{% set currentPage = "index" %}{% endif %}
+
+{% extends "layouts/bespoke.html" %}
+
+
+{% block form %}
+
+
+
+        {{ govukTable({
+      caption: "Check previous details",
+      captionClasses: "govuk-table__caption--l",
+      firstCellIsHeader: true,
+      rows: [
+        [
+          {
+            text: "Name"
+          },
+          {
+            text: "Sarah Philips"
+          }
+        ],
+        [
+          {
+            text: "Date of birth"
+          },
+          {
+            text: "5 January 1978"
+          }
+        ],
+        [
+          {
+            text: "Address"
+          },
+          {
+            html: "72 Guild Street<br>London<br>SE23 6FH"
+          }
+        ],
+        [
+          {
+            text: "Contact details"
+          },
+          {
+            html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+          }
+        ]
+      ]
+    }) }}
+
+
+
+{% endblock %}

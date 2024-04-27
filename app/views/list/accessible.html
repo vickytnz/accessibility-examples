@@ -1,0 +1,110 @@
+{% set link = 'index' %}
+{% set currentPage = "accessible" %}
+{% extends "/" + folder +  "/index.html" %}
+
+
+{% block form %}
+
+
+
+        <h1 class="govuk-heading-l">Check previous details</h1>
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "Sarah Philips"
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "5 January 1978"
+              }
+            },
+            {
+              key: {
+                text: "Address"
+              },
+              value: {
+                html: "72 Guild Street<br>London<br>SE23 6FH"
+              }
+            },
+            {
+              key: {
+                text: "Contact details"
+              },
+              value: {
+                html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+              }
+            }
+          ]
+        }) }}
+
+
+<!--
+
+        {{ govukTable({
+      caption: "Courses",
+      captionClasses: "govuk-table__caption--l",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Course",
+          classes: "app-custom-class"
+        },
+        {
+          text: "Institute",
+          classes: "app-custom-class"
+        },
+        {
+          text: "Studey mode",
+          classes: "app-custom-class"
+        },
+        {
+          text: "Edit",
+          classes: "app-custom-class"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "University 1"
+          },
+          {
+            text: "Course 1"
+          },
+          {
+            text: "Full-time"
+          }
+          ,
+          {
+            html: "<a href='#'>Edit</a>"
+          }
+        ],
+        [
+          {
+            text: "University 2"
+          },
+          {
+            text: "Course 2"
+          },
+          {
+            text: "Part-time"
+          }
+          ,
+          {
+            html: "<a href='#'>Edit</a>"
+          }
+        ]
+      ]
+    }) }}
+-->
+
+
+{% endblock %}

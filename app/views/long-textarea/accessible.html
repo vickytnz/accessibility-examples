@@ -1,20 +1,9 @@
-{% extends "layouts/bespoke.html" %}
+{% set link = 'index' %}
+{% set currentPage = "accessible" %}
+{% extends "/" + folder +  "/index.html" %}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
-
-{% block content %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+{% block form %}
 
       <h1 class="govuk-heading-l">
         Tell us why you left your studies
@@ -44,18 +33,9 @@
         name: "moreDetail",
         id: "more-detail",
         label: {
-          text: ""
+          text: "Can you provide more detail?"
         }
       }) }}
 
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-
-      </form>
-
-    </div>
-  </div>
 
 {% endblock %}

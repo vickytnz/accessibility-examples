@@ -1,3 +1,4 @@
+{% set backHidden = true %}
 {% extends "layouts/bespoke.html" %}
 
 {% set pageName="Home" %}
@@ -5,6 +6,10 @@
 {% block content %}
 
 <div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full-width">
+    </div>
+
   <div class="govuk-grid-column-two-thirds">
 
 
@@ -12,11 +17,35 @@
       {{ serviceName }}
     </h1>
 
+<P>Series of common accessibility mistakes on forms. Examples cycle through a common mistake, the same version with an explanation and then a better version.</p>
+
+
+{% set title = [
+  {name: 'List', url: "list"},
+  {name: 'Long question', url: "long-question"},
+  {name: 'Long text area', url: "long-textarea"},
+  {name: 'Short text area', url: "short-textarea"}
+  ] %}
+
+
+  {% set list = [
+    {name: 'Original', url: 'index'},
+    {name: 'Original with explanation', url: 'index-explanation'},
+  {name: 'Accessible', url: 'accessible'}
+  ]%}
+
+
+
+
+{% for item in title %}
+<h2 class="govuk-heading-m">{{ item.name }}</h2>
     <ul class="govuk-list govuk-list--bullet">
-      <li><a href="/long-question">Long question</a> and <a href="/long-question-accessible">accessible long question version</a></li>
-        <li><a href="/long-textarea">Long textarea</a> and <a href="/long-textarea-accessible">accessible textarea version</a></li>
-        <li><a href="/short-textinput">Short text input</a> and <a href="/short-textinput-accessible">accessible text input version</a>
-    </ul>
+{% for iterator in list %}
+      <li><a href="/{{item.url}}/{{iterator.url}}">{{iterator.name  }}</a></li>
+{% endfor %}
+</ul>
+{% endfor %}
+
 
   </div>
 </div>
