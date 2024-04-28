@@ -1,0 +1,17 @@
+{% set link = 'index' %}
+{% set currentPage = "accessible-explanation" %}
+{% set explanation = "accessible" %}
+{% set explanationDescription = "Showing information as a start helps everyone get the information - if there is too much information then the page needs to be redesigned." %}
+
+{% set explanationLinks =  [
+
+  {
+    text: "NHS service manual on how to write good questions for forms",
+    href: "https://service-manual.nhs.uk/content/how-to-write-good-questions-for-forms"
+  },
+  { text: "Don't be afraid of the big long page by Amy Hupe",
+    href: "https://amyhupe.co.uk/articles/dont-be-afraid-of-the-big-long-page/"
+}
+]
+%}
+{% include "/" + folder +  "/accessible.html" %}

@@ -1,0 +1,15 @@
+{% set link = 'index' %}
+{% set currentPage = "accessible-explanation" %}
+{% set explanation = "accessible" %}
+
+{% set explanationDescription = "Structuring the page to have header, details and question helps screen readers, audio announcers and general ease of memory. Links will also be announced by a screen reader before the question." %}
+
+{% set explanationLinks =  [
+  {
+    text: "Find out about question pages on GOV.UK",
+    href: "https://design-system.service.gov.uk/patterns/question-pages/"
+  }
+]
+%}
+
+{% include "/" + folder +  "/accessible.html" %}

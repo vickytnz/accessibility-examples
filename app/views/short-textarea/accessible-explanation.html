@@ -1,0 +1,16 @@
+{% set link = 'index' %}
+{% set currentPage = "accessible-explanation" %}
+{% set explanation = "accessible" %}
+
+{% set explanationDescription = "Keeping hint text to what can be shown in a paragraph means that it is unlikely to be skipped by a screereader or forgotten but someone with working memory issues." %}
+
+{% set explanationLinks =  [
+  {
+    text: "Making legends and labels headings on GOV.UK",
+    href: "https://design-system.service.gov.uk/get-started/labels-legends-headings/"
+  }
+]
+%}
+
+
+{% include "/" + folder +  "/accessible.html" %}

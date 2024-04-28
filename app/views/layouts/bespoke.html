@@ -18,8 +18,9 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   {% set list = [
     {name: 'Original', url: 'index'},
     {name: 'Original with explanation', url: 'index-explanation'},
-  {name: 'Accessible', url: 'accessible'}
-  ]%}
+    {name: 'Accessible', url: 'accessible'},
+    {name: 'Accessible with explanation', url: 'accessible-explanation'}
+  ] %}
 
 
 
@@ -43,11 +44,6 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% if not backHidden %}
 
-{% set list = [
-  {name: 'Original', url: 'index'},
-  {name: 'Original with explanation', url: 'index-explanation'},
-{name: 'Accessible', url: 'accessible'}
-]%}
 
 <nav class="option-toggle" aria-label="Option switcher">
   <ul class="option-toggle-select__list">
@@ -122,10 +118,43 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 }) }}
 -->
 
+{% if explanation == "accessible" %}
+
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Accessibility improvements
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+
+    <P>{{explanationDescription}}</P>
+    {% if explanationLinks %}
+    <ul class="govuk-list">
+
+      {% for item in explanationLinks %}
+      {% if item.href %}
+      <li>
+        <a href="{{item.href}}">{{item.text | default("More details on GOV.UK")}}</a>
+      </li>
+      {% else %}
+      {{item.text | default("More details on GOV.UK")}}
+      {% endif  %}
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+  </div>
+</div>
+
+{% else %}
+
+
 <div class="govuk-error-summary" data-module="govuk-error-summary">
   <div role="alert">
     <h2 class="govuk-error-summary__title">
-      Why this page is not accessible
+      Accessibility problems with this page
     </h2>
     <div class="govuk-error-summary__body">
       <P>{{explanationDescription}}</P>
@@ -148,7 +177,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 </div>
 
 
-
+{% endif %}
 {% endif %}
 
 {% block form %}
@@ -157,7 +186,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% endblock %}
 
-{% if link == "index-explanation" %}{% set next = " to accessibility problems" %}{% elif  link == "accessible"  %}{% set next = " to more accessible version" %}{% else %}{% set next = " to original" %}{% endif %}
+{% if link == "index-explanation" %}{% set next = " to accessibility problems" %}{% elif  link == "accessible"  %}{% set next = " to more accessible version" %}{% elif  link == "accessible-explanation"  %}{% set next = " to explanation of improvements" %}{% else %}{% set next = " to original" %}{% endif %}
 
         {{ govukButton({
           text: "Go" + next
