@@ -1,0 +1,45 @@
+{% if not link %}{% set link = 'index-explanation' %}{% endif %}
+{% if not currentPage %}{% set currentPage = "index" %}{% endif %}
+
+{% extends "layouts/bespoke.html" %}
+
+
+{% block form %}
+
+      <h1 class="govuk-heading-l">
+        Accessibility experience
+      </h1>
+
+
+        <p>If you have information about multiple dates of accessibility training, start with the first example. You can add the other examples after you have completed the first one.</p>
+
+
+        {{ govukRadios({
+                 name: "accessibility-experience",
+                 fieldset: {
+                   legend: {
+                     text: "When did you get your accessibility experience?",
+                     isPageHeading: false,
+                     classes: "govuk-fieldset__legend--m"
+                   }
+                 },
+                 items: [
+                   {
+                     value: "Before 2012",
+                     text: "Before 2012"
+                   },
+                   {
+                     value: "Between 2012 and 2019",
+                     text: "Between 2012 and 2019"
+                   },
+                   {
+                     value: "After 2019",
+                     text: "After 2019"
+                   }
+                 ]
+               }) }}
+
+
+
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
+{% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
+{% extends "/" + folder +  "/index.html" %}
+
+
+{% block form %}
+
+      <h1 class="govuk-heading-l">
+        Telling us about your accessibility experience
+      </h1>
+
+
+
+  <p>
+What you need to tell us depends on when you completed your training:
+        </p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>before 2012</li>
+  <li>between 2012 and 2019</li>
+  <li>after 2019</li>
+</ul>
+
+<p>This is because the accessibility guidelines have changed between these time periods.</p>
+        <h2 class="govuk-heading-">
+        Training before 2012
+        </h2>
+
+        <p>
+      You need to tell us what type of training it was.
+
+              </p>
+
+        <h2 class="govuk-heading-">
+          Training between 2012 and 2019
+        </h2>
+
+        <p>
+      You need to tell us:
+
+              </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>what type of training it was</li>
+          <li>which version of WCAG you used </li>
+
+        </ul>
+
+
+        <h2 class="govuk-heading-">
+        Training after 2019
+        </h2>
+
+        <p>
+      You need to tell us:
+
+              </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>what type of training it was</li>
+          <li>which version of WCAG you used </li>
+          <li>if it was in the UK public sector </li>
+        </ul>
+
+        <h2 class="govuk-heading-">
+        If you do not have all of this information
+        </h2>
+
+        <p>
+      If you need to get more information, you can save and come back later. You can also check what is needed using the <a href="https://www.gov.uk/guidance/guidance-and-tools-for-digital-accessibility">accessibility guidance on GOV.UK</a>.
+
+              </p>
+
+{% endblock %}
