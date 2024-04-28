@@ -1,5 +1,6 @@
 {% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
+{% set pageTitle = "Check previous details" %}
 {% extends "/" + folder +  "/index.html" %}
 
 
@@ -7,7 +8,7 @@
 
 
 
-        <h1 class="govuk-heading-l">Check previous details</h1>
+        <h1 class="govuk-heading-l">{{pageTitle}}</h1>
 
         {{ govukSummaryList({
           rows: [

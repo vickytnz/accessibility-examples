@@ -1,12 +1,13 @@
 {% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
+{% set pageTitle = "Telling us about your accessibility experience" %}
 {% extends "/" + folder +  "/index.html" %}
 
 
 {% block form %}
 
       <h1 class="govuk-heading-l">
-        Telling us about your accessibility experience
+        {{pageTitle}}
       </h1>
 
 

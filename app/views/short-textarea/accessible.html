@@ -1,5 +1,6 @@
 {% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
+{% set pageTitle = "What is your account number?" %}
 {% extends "/" + folder +  "/index.html" %}
 
 
@@ -9,7 +10,7 @@
 
         {{ govukInput({
       label: {
-        text: "What is your account number?",
+        text: pageTitle,
         classes: "govuk-label--l",
         isPageHeading: true
       },

@@ -1,5 +1,7 @@
 {% if not link %}{% set link = 'index-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "index" %}{% endif %}
+{% if not pageTitle %}{% set pageTitle = "Accessibility experience" %}{% endif %}
+{% set section = "Information" %}
 
 {% extends "layouts/bespoke.html" %}
 
@@ -7,7 +9,7 @@
 {% block form %}
 
       <h1 class="govuk-heading-l">
-        Accessibility experience
+        {{pageTitle}}
       </h1>
 
 

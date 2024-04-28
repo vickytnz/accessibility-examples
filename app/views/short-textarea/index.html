@@ -1,5 +1,7 @@
 {% if not link %}{% set link = 'index-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "index" %}{% endif %}
+{% if not pageTitle %}{% set pageTitle = "What is your account number?" %}{% endif %}
+{% set section = "Short textarea" %}
 
 {% extends "layouts/bespoke.html" %}
 
@@ -8,7 +10,7 @@
 
         {{ govukInput({
       label: {
-        text: "What is your account number?",
+        text: pageTitle,
         classes: "govuk-label--l",
         isPageHeading: true
       },
@@ -22,5 +24,5 @@
       spellcheck: false
     }) }}
 
-  
+
 {% endblock %}

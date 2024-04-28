@@ -1,12 +1,13 @@
 {% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
+{% set pageTitle = "[statement]" %}
 {% extends "/" + folder +  "/index.html" %}
 
 
 {% block form %}
 
       <h1 class="govuk-heading-l">
-        [statement]
+        {{pageTitle}}
       </h1>
 
       <form class="form" action="/long-textarea" method="post">

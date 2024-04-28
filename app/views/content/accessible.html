@@ -1,5 +1,6 @@
-{% if not link %}{% set link = 'iaccessible-explanation' %}{% endif %}
+{% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
+{% set pageTitle = "Examples of complex information" %}
 
 {% extends "/" + folder +  "/index.html" %}
 
@@ -8,7 +9,7 @@
 
 
 
-        <h1 class="govuk-heading-l">Examples of complex information</h1>
+        <h1 class="govuk-heading-l">{{pageTitle}}</h1>
 
 
 

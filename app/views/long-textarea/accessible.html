@@ -1,12 +1,13 @@
 {% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
+{% set pageTitle = "Tell us why you left your studies" %}
 {% extends "/" + folder +  "/index.html" %}
 
 
 {% block form %}
 
       <h1 class="govuk-heading-l">
-        Tell us why you left your studies
+{{pageTitle}}
       </h1>
 
       <form class="form" action="/short-textinput" method="post">
