@@ -1,6 +1,6 @@
 {% if not link %}{% set link = 'index-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "index" %}{% endif %}
-{% if not title %}{% set title = "[What is your question?]" %}{% endif %}
+{% if not pageTitle %}{% set pageTitle = "[What is your question?]" %}{% endif %}
 {% set section = "Long question" %}
 
 {% extends "layouts/bespoke.html" %}
@@ -9,7 +9,7 @@
 {% block form %}
 
       <h1 class="govuk-heading-l">
-        {{title}}
+        {{pageTitle}}
       </h1>
 
 
