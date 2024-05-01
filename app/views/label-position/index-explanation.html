@@ -1,0 +1,19 @@
+{% set link = 'accessible' %}
+{% set currentPage = "index-explanation" %}
+
+{% set explanationDescription = "If an input field needs a lot of supporting guidance, it is a complex question and therefore needs a statement and a header before the input" %}
+
+{% set explanationLinks =  [
+  {
+    text: "Find out about text input on GOV.UK",
+    href: "https://design-system.service.gov.uk/components/text-input/"
+  },
+  {
+    text: "Find out about complex question pages on GOV.UK",
+    href: "https://design-system.service.gov.uk/patterns/question-pages/#asking-complex-questions-without-using-hint-text"
+  }
+]
+%}
+
+
+{% include "/" + folder +  "/index.html" %}
