@@ -1,7 +1,9 @@
-{% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
-{% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
-{% set pageTitle = "[statement]" %}
-{% extends "/" + folder +  "/index.html" %}
+{% if not link %}{% set link = 'index-explanation' %}{% endif %}
+{% if not currentPage %}{% set currentPage = "index" %}{% endif %}
+{% if not pageTitle %}{% set pageTitle = "[What is your question?]" %}{% endif %}
+{% set section = "Long question" %}
+
+{% extends "layouts/bespoke.html" %}
 
 
 {% block form %}
@@ -10,9 +12,17 @@
         {{pageTitle}}
       </h1>
 
-      <form class="form" action="/long-textarea" method="post">
+
+        <p>Information</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>list item</li>
+          <li>list item</li>
+          <li>list item</li>
+        </ul>
 
 
+        <p>Information</p>
 
           <ul class="govuk-list govuk-list--bullet">
             <li>list item</li>
@@ -20,14 +30,13 @@
             <li>list item</li>
           </ul>
 
-  <p>More information is on <a href="/index">link</a>
-        </p>
+
 
         {{ govukRadios({
                  name: "higher-further-education",
                  fieldset: {
                    legend: {
-                     text: "[question name?]",
+                     text: "",
                      isPageHeading: false,
                      classes: "govuk-fieldset__legend--m"
                    }
@@ -43,6 +52,8 @@
                    }
                  ]
                }) }}
+
+
 
 
 {% endblock %}
