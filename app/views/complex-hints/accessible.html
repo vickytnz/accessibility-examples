@@ -1,6 +1,6 @@
 {% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
-{% set pageTitle = "What is your account number?" %}
+{% set pageTitle = "What is your Self Assessment Unique Taxpayer Reference (UTR)?" %}
 {% extends "/" + folder +  "/index.html" %}
 
 
@@ -16,7 +16,8 @@
       },
       classes: "govuk-input--width-10",
       hint: {
-        text: "This is text. This is more text"
+        text: "Your UTR can be 10 or 13 digits long. You can find it in your Personal Tax Account, the HMRC app, on tax returns and other documents from HMRC.
+        It might be called ‘reference’, ‘UTR’ or ‘official use’. "
       },
       id: "account-number",
       name: "accountNumber",
@@ -25,6 +26,8 @@
     }) }}
 
 
+
+    <p><a href="https://www.gov.uk/find-utr-number">How to find your UTR</a></p>
 
 
 {% endblock %}

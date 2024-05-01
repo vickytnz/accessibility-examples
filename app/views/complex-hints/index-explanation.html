@@ -1,0 +1,15 @@
+{% set link = 'accessible' %}
+{% set currentPage = "index-explanation" %}
+
+{% set explanationDescription = "Hints (information between the input legent and the input field) must be simple without complex formatting or links. If extra formatting like lists and links are put in the hint area between an input legend and the input, a screenreader may not read them correctly." %}
+
+{% set explanationLinks =  [
+  {
+    text: "Find out about question pages on GOV.UK",
+    href: "https://design-system.service.gov.uk/patterns/question-pages/"
+  }
+]
+%}
+
+
+{% include "/" + folder +  "/index.html" %}
