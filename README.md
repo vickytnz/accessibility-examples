@@ -14,7 +14,7 @@ You can add examples by:
 
 1. forking this repository 
 2. copying app/views/_COPY-ME folder and naming it the task you want (no spaces)
-3. making the changes that you want to show (if you want to show multiple changes in the same flow or information after the continue button ask for extra support)
+3. making the changes that you want to show (if you want to show multiple pages in the same scenario or information after the 'continue' button ask for extra support)
 4. adding the name of the changes to the title array on /layouts/bespoke.html (or admin can do this for you)
 5. pushinge the changes back as a change request.
 
