@@ -8,7 +8,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 <!-- if you have added a new section you will need to add the name of it and the URL to the title array. There must be a comma between each object but none after the last one- people often get this wrong -->
 
 {% set title = [
-  {name: 'Accordions', url: "content"},
+  {name: 'Content (accordions)', url: "content"},
   {name: 'Lists and dates', url: "list"},
   {name: 'Complex question', url: "complex-question"},
   {name: 'Label position', url: "label-position"},
@@ -20,9 +20,9 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
   {% set list = [
     {name: 'Original', url: 'index'},
-    {name: 'Original with explanation', url: 'index-explanation'},
+    {name: 'Original (with explanation)', url: 'index-explanation'},
     {name: 'Accessible', url: 'accessible'},
-    {name: 'Accessible with explanation', url: 'accessible-explanation'}
+    {name: 'Accessible (with explanation)', url: 'accessible-explanation'}
   ] %}
 
 
@@ -208,10 +208,22 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   <div class="govuk-width-container">
     <div class="govuk-footer__navigation">
       <div class="govuk-footer__section govuk-grid-column-two-thirds" >
-        <h2 class="govuk-footer__heading govuk-heading-m">Links</h2>
+
+        <h2 class="govuk-footer__heading govuk-heading-m">Notes</h2>
+    <!--    <ul class="govuk-footer__list">
+          <li class="govuk-footer__list-item">
+            <a href="/manage-prototype">Manage your prototype</a>
+          </li>
+          </ul>
+      </div> -->
+
+      <P class="govuk-footer__meta-custom">Series of common accessibility mistakes on forms.</p>
+        <P class="govuk-footer__meta-custom">Built and hosted by Vicky Teinaki.</p>
+    <p>Contributors: Lori Thomson, Adam Liptrot, Caroline Jarrett. <a href="https://github.com/vickytnz/accessibility-examples">Find out how you can contribute on Github</a></p>
 
 
-          <ul class="govuk-footer__list"> <!-- govuk-footer__list--columns-2" -->
+<!--
+          <ul class="govuk-footer__list">
 
         {% for item in title %}
           <li class="govuk-footer__list-item "> {{ item.name }}:
@@ -222,21 +234,24 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
         </li>
 
 
-              </ul>
+              </ul> -->
       </div>
       <div class="govuk-footer__section govuk-grid-column-one-third">
-        <h2 class="govuk-footer__heading govuk-heading-m">Notes</h2>
-    <!--    <ul class="govuk-footer__list">
-          <li class="govuk-footer__list-item">
-            <a href="/manage-prototype">Manage your prototype</a>
+
+      <h2 class="govuk-footer__heading govuk-heading-m">Links</h2>
+      <ul class="govuk-footer__list">
+
+
+        {% set links = [
+          {name: 'Home', url: '/'},
+          {name: 'Site map', url: '/site-map'},
+          {name: 'Github reponsitory', url: 'https://github.com/vickytnz/accessibility-examples'}
+          ] %}
+
+          {% for iterator in links %}
+                <li class="govuk-footer__list-item "> <a href="{{iterator.url}}">{{iterator.name  }}</a>
+          {% endfor %}
           </li>
-          </ul>
-      </div> -->
-
-      <P class="govuk-footer__meta-custom">Series of common accessibility mistakes on forms: Built and hosted by Vicky Teinaki, contributions from from Lori Thomson and Adam Liptrot.</p>
-
-        <P class="govuk-footer__meta-custom">Source code is available as a <a href="https://github.com/vickytnz/accessibility-examples">Github repository</a>.</p>
-
     </div>
 
 

@@ -18,30 +18,49 @@
     </h1>
 
 <P>Series of common accessibility mistakes on forms - even when designed using the accessibility-focused <a href="https://frontend.design-system.service.gov.uk/">GOV.UK Frontend</a> (as documented in the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a>).
-  </p><p>Examples cycle through a common mistake, the same version with an explanation, then a better version and finally that better version with an explanation.</p>
-
+  </p>
   {{ govukWarningText({
-    text: "This site is a work in progress and is not currently fully accessible. As this is a personal project it does not have an accessibility statement, but this may also change after we make the known accessibility fixes.",
+    text: "This site is a work in progress and is currently not fully accessible.",
     iconFallbackText: "Warning"
   }) }}
 
+<h2 class="govuk-heading-m">Examples</h2>
+
+  <ul class="govuk-list">
+    {% for item in title %} {# if you need to add a new section to this list, go to layouts/bespoke.html  and add them to 'title' array #}
+<li><a href="/{{item.url}}/{{list[0].url}}"> {{ item.name }}</a></li>
+{% endfor %}
+</ul>
+
+
+<p>Examples cycle through:</p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>a common mistake</li>
+  <li>the same version with an explanation</li>
+  <li>then a better version</li>
+  <li>better version with an explanation</li>
+  </ul>
+<!--
 </div>
 </div>
 
 <div class="govuk-grid-row">
 
-{% for item in title %} <!-- if you need to add a new section to this list, go to layouts/bespoke.html  and add them to 'title' array -->
+{% for item in title %} {# if you need to add a new section to this list, go to layouts/bespoke.html  and add them to 'title' array #}
   <div class="govuk-grid-column-one-third">
-<h2 class="govuk-heading-m">{{ item.name }}</h2>
+<h2 class="govuk-heading-m"><a href="/{{item.url}}/{{list[0].url}}"> {{ item.name }}</a></h2>
     <ul class="govuk-list govuk-list--bullet">
+
+
 {% for iterator in list %}
       <li><a href="/{{item.url}}/{{iterator.url}}">{{iterator.name  }}</a></li>
 {% endfor %}
 </ul>
   </div>
 {% endfor %}
+-->
 
-
+</div>
 </div>
 
 {% endblock %}

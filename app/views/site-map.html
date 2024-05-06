@@ -1,0 +1,38 @@
+{% set backHidden = true %}
+{% extends "layouts/bespoke.html" %}
+
+{% set pageName="Sitemap" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full-width">
+    <h1 class="govuk-heading-xl">
+  Site map
+    </h1>
+
+<h2 class="govuk-heading-m"><a href="/">Home</a></h2>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+
+{% for item in title %} {# if you need to add a new section to this list, go to layouts/bespoke.html  and add them to 'title' array #}
+  <div class="govuk-grid-column-one-third">
+<h2 class="govuk-heading-m"> {{ item.name }}</h2>
+    <ul class="govuk-list govuk-list--bullet">
+
+
+{% for iterator in list %}
+      <li><a href="/{{item.url}}/{{iterator.url}}">{{iterator.name  }} {{ item.name | lower }}</a></li>
+{% endfor %}
+</ul>
+  </div>
+{% endfor %}
+
+
+</div>
+
+
+{% endblock %}
