@@ -1,0 +1,23 @@
+<!-- the only purpose of this page is to show the explanation of accessibility issues -->
+
+{% set link = 'accessible' %} <!-- Don't change this -->
+{% set currentPage = "index-explanation" %} <!-- Don't change this -->
+
+{% set explanationDescription = "[ADD TEXT HERE - it does not allow for paragraphs right now]" %} <!-- you must have this section, change text as needed-->
+
+{% set explanationLinks =  [
+  {
+    text: "[add description]",
+    href: "[add full URL]"
+  },
+  {
+    text: "[add description]",
+    href: "[add full URL]"
+  }
+]
+%}
+<!--  you can have as few and as many text and links as you want. Make sure that there are commas between each object list, but none after the last one - this is easy to get wrong.-->
+
+
+<!-- this inherits the code from index.html so you don't need to do it twice -->
+{% include "/" + folder +  "/index.html" %}

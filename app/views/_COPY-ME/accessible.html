@@ -1,0 +1,55 @@
+<!-- most of the logic (form action, button logic) is automatically inherited from layouts/bespoke.html -->
+{% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
+{% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
+{% set pageTitle = "[statement]" %}
+{% extends "/" + folder +  "/index.html" %}
+
+
+{% block form %}
+<!-- The version can be as different from the original version as you want, you have complete control over the code -->
+      <h1 class="govuk-heading-l">
+        {{pageTitle}}
+      </h1>
+
+
+
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+          </ul>
+
+
+          <p>Information</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>list item</li>
+              <li>list item</li>
+              <li>list item</li>
+            </ul>
+
+
+        {{ govukRadios({
+                 name: "higher-further-education",
+                 fieldset: {
+                   legend: {
+                     text: "[question name?]",
+                     isPageHeading: false,
+                     classes: "govuk-fieldset__legend--m"
+                   }
+                 },
+                 items: [
+                   {
+                     value: "yes",
+                     text: "Yes"
+                   },
+                   {
+                     value: "no",
+                     text: "No"
+                   }
+                 ]
+               }) }}
+
+
+{% endblock %}

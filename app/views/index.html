@@ -26,7 +26,7 @@
 
 <div class="govuk-grid-row">
 
-{% for item in title %} {# variables are declared in layouts/bespoke.html #}
+{% for item in title %} <!-- if you need to add a new section to this list, go to layouts/bespoke.html  and add them to 'title' array -->
   <div class="govuk-grid-column-one-third">
 <h2 class="govuk-heading-m">{{ item.name }}</h2>
     <ul class="govuk-list govuk-list--bullet">

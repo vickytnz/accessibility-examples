@@ -1,0 +1,60 @@
+<!-- most of the logic (form action, button logic) is automatically inherited from layouts/bespoke.html -->
+{% if not link %}{% set link = 'index-explanation' %}{% endif %} <!-- link to page with explanation - you shouldn't need to change this -->
+{% if not currentPage %}{% set currentPage = "index" %}{% endif %}<!-- default page to link to - you shouldn't need to change this -->
+{% if not pageTitle %}{% set pageTitle = "[ADD PAGE TITLE]" %}{% endif %}<!-- page title that shows in tab title, you can also use {{pageTitle}} as a variable on this page so that it's consistent -->
+{% set section = "[ADD PAGE TITLE]" %}<!-- title for section - what will also be shown tab title - this should be the name of the task. You only need to to this here and it will show up on the other pages  -->
+
+{% extends "layouts/bespoke.html" %}
+
+
+{% block form %}
+<!-- add or delete whatever code you want in this section - if it is from the govuk design system it will automatically work. If it needs custom CSS you will need to add it to app/assets/sass/scss -->
+      <h1 class="govuk-heading-l">
+        {{pageTitle}} <!-- the text set at the top of the page, do not have to use it but it helps with consistency -->
+      </h1>
+
+
+        <p>Information</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>list item</li>
+          <li>list item</li>
+          <li>list item</li>
+        </ul>
+
+
+        <p>Information</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+          </ul>
+
+
+
+        {{ govukRadios({
+                 name: "higher-further-education",
+                 fieldset: {
+                   legend: {
+                     text: "",
+                     isPageHeading: false,
+                     classes: "govuk-fieldset__legend--m"
+                   }
+                 },
+                 items: [
+                   {
+                     value: "yes",
+                     text: "Yes"
+                   },
+                   {
+                     value: "no",
+                     text: "No"
+                   }
+                 ]
+               }) }}
+
+
+
+
+{% endblock %}

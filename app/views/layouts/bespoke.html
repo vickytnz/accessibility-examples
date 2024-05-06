@@ -5,6 +5,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
+<!-- if you have added a new section you will need to add the name of it and the URL to the title array. There must be a comma between each object but none after the last one- people often get this wrong -->
 
 {% set title = [
   {name: 'Accordions', url: "content"},
@@ -15,6 +16,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   {name: 'Asking for information', url: "information"}
   ] %}
 
+<!-- as long as you haven't  -->
 
   {% set list = [
     {name: 'Original', url: 'index'},
