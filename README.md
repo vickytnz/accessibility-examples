@@ -1,5 +1,7 @@
 Community effort to make common accessibility issues with the GOV.UK Frontend/design system visible. An accessible frontend can still be implemented inaccessibly.
 
+Live website: https://accessibility-examples.vickytnz.com/ password accessibility
+
 ## How this works
 This is set up with 'tasks' that have a:
 
@@ -10,13 +12,14 @@ This is set up with 'tasks' that have a:
 
 ## Add an example
 
-You can add examples by:
+Do add an example, do these steps:
 
-1. forking this repository 
-2. copying app/views/_COPY-ME folder and naming it the task you want (no spaces)
-3. making the changes that you want to show (if you want to show multiple changes in the same flow or information after the continue button ask for extra support)
-4. adding the name of the changes to the title array on /layouts/bespoke.html (or admin can do this for you)
-5. pushinge the changes back as a change request.
+1. Forking this repository - look for the button called 'fork' at the top of the page
+2. Go into the repository on your computer and install the govuk prototype kit 
+3. Copy app/views/_COPY-ME folder and name it as the task you want (no spaces)
+4. Make the changes that you want to show (if you want to show multiple pages in the same scenario or information after the 'continue' button ask for extra support)
+5. Add the name of the changes to the title array on /layouts/bespoke.html (or admin can do this for you)
+6. Push the changes back as a change request.
 
 This is being done as a personal project so it may take a while to respond.
 
