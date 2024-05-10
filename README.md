@@ -23,16 +23,18 @@ This servivce is built using the GOV.UK prototype kit. This means that if you wa
 2. Download this prototype onto your computer - use the instructions on the GOV.UK prototype kit https://prototype-kit.service.gov.uk/docs/github-download-existing-prototype
 
 Once you have the GOV.UK prototype kit installed and this prototype on your computer:
+
 3. Copy app/views/_COPY-ME folder and name it as the task you want (no spaces)
 4. Make the changes that you want to show 
 5. Add the name of the changes to the title array on /layouts/bespoke.html (or admin can do this for you)
 6. Go to localhost:3000 to check your changes 
 
 If you are happy with your changes:
-6. Go to Github Desktop and commit your changes with a message
-7. Use the push changes button to sync your code with the Github website
-6. Go to the Github website and make a pull request
-6. Push the changes back as a change request.
+
+7. Go to Github Desktop and commit your changes with a message
+8. Use the push changes button to sync your code with the Github website
+9. Go to the Github website and make a pull request
+10. Push the changes back as a change request.
 
 This is being done as a personal project so it may take a while to respond.
 
