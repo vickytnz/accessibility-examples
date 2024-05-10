@@ -18,14 +18,20 @@ This accessibility-examples tool is set up with 'tasks' that have four versions:
 If you have comments or suggestions for changes, you can raise an issue. This is a volunteer project and we'll answer when we have time. 
 
 ## Contribute by adding a single 'task'
+This servivce is built using the GOV.UK prototype kit. This means that if you want to contribute tasks, you will need to:
+1. Install the GOV.UK prototype Kit - use the 'getting started' instructions on the GOV.UK Prototype website https://prototype-kit.service.gov.uk/docs/install/getting-started  
+2. Download this prototype onto your computer - use the instructions on the GOV.UK prototype kit https://prototype-kit.service.gov.uk/docs/github-download-existing-prototype
 
-To add a single 'task', do these steps:
-
-1. Fork this repository - look for the button called 'fork' at the top of the page
-2. Go into the repository on your computer and install the govuk prototype kit 
+Once you have the GOV.UK prototype kit installed and this prototype on your computer:
 3. Copy app/views/_COPY-ME folder and name it as the task you want (no spaces)
 4. Make the changes that you want to show 
 5. Add the name of the changes to the title array on /layouts/bespoke.html (or admin can do this for you)
+6. Go to localhost:3000 to check your changes 
+
+If you are happy with your changes:
+6. Go to Github Desktop and commit your changes with a message
+7. Use the push changes button to sync your code with the Github website
+6. Go to the Github website and make a pull request
 6. Push the changes back as a change request.
 
 This is being done as a personal project so it may take a while to respond.
