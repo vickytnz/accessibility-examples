@@ -17,29 +17,34 @@
     Learn how to fix common accessibility mistakes in forms
     </h1>
 
-<P>Series of common accessibility mistakes on forms - even when designed using the accessibility-focused <a href="https://frontend.design-system.service.gov.uk/">GOV.UK Frontend</a> (as documented in the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a>).
+<P>Even when you design using the accessibility-focused <a href="https://frontend.design-system.service.gov.uk/">GOV.UK Frontend</a> (as documented in the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a>), there are several pitfalls that can create accessibility issues.  
   </p>
   {{ govukWarningText({
-    text: "This site is a work in progress and is currently not fully accessible.",
+    text: "This is a work in progress and is not yet fully accessible.",
     iconFallbackText: "Warning"
   }) }}
 
-<h2 class="govuk-heading-m">Examples</h2>
+<h2 class="govuk-heading-m">Learn from examples</h2>
 
-  <ul class="govuk-list">
+
+<p>Examples cycle through:</p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>a common accessibilty mistake</li>
+  <li>the same version with an explanation</li>
+  <li>a better version</li>
+  <li>the better version with an explanation of the changes</li>
+  </ul>
+
+    <ul class="govuk-list">
     {% for item in title %} {# if you need to add a new section to this list, go to layouts/bespoke.html  and add them to 'title' array #}
 <li><a href="/{{item.url}}/{{list[0].url}}"> {{ item.name }}</a></li>
 {% endfor %}
 </ul>
 
+<h2 class="govuk-heading-m">Discuss or contribute</h2>
 
-<p>Examples cycle through:</p>
-  <ul class="govuk-list govuk-list--bullet">
-  <li>a common mistake</li>
-  <li>the same version with an explanation</li>
-  <li>then a better version</li>
-  <li>better version with an explanation</li>
-  </ul>
+<p>If you have comments, questions, or would like to contribute, then join us on <a href="https://github.com/vickytnz/accessibility-examples">our GitHub repository</a>.</p>
+
 <!--
 </div>
 </div>
