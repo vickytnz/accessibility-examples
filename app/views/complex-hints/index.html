@@ -1,31 +1,13 @@
-{% if not link %}{% set link = 'index-explanation' %}{% endif %}
-{% if not currentPage %}{% set currentPage = "index" %}{% endif %}
-{% if not pageTitle %}{% set pageTitle = "What is your Self Assessment Unique Taxpayer Reference (UTR)?" %}{% endif %}
-{% set section = "Short textarea" %}
-
-{% extends "layouts/bespoke.html" %}
+{% set pageTitle = "Complex hints" %}
+{% extends "layouts/information-page.html" %}
 
 
-{% block form %}
+{% block description %}
 
 
-    <div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--l" for="example">
-    {{pageTitle}}
-    </label>
-  </h1>
-  <div id="example-hint" class="govuk-hint">
-    Your UTR can be 10 or 13 digits long. You can find it.
-     <ul >
-     <li>in your Personal Tax Account</li>
-     <li>the HMRC app</li>
- <li>on tax returns and other documents from HMRC</li>
-     </ul>
-It might be called ‘reference’, ‘UTR’ or ‘official use’. <a href="https://www.gov.uk/find-utr-number">How to find your UTR</a>
-  </div>
-  <input class="govuk-input" id="example" name="example" type="text" aria-describedby="example-hint">
-</div>
+
+ <p>Example of a question where the hint has a lot of extra information and links.</p>
+
 
 
 {% endblock %}

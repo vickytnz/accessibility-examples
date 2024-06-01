@@ -8,7 +8,7 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full-width">
-    <h1 class="govuk-heading-xl">
+    <h1 class="govuk-heading-l">
   Site map
     </h1>
 
@@ -23,7 +23,7 @@
 <h2 class="govuk-heading-m"> {{ item.name }}</h2>
     <ul class="govuk-list govuk-list--bullet">
 
-
+<li><a href="/{{item.url}}/index">Index</a></li>
 {% for iterator in list %}
       <li><a href="/{{item.url}}/{{iterator.url}}">{{iterator.name  }} {{ item.name | lower }}</a></li>
 {% endfor %}
@@ -31,6 +31,8 @@
   </div>
 {% endfor %}
 
+<h2 class="govuk-heading-m"><a href="/using-examples">Using the examples</a></h2>
+<h2 class="govuk-heading-m"><a href="/contribute">Contribute</a></h2>
 
 </div>
 

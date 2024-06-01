@@ -1,56 +1,12 @@
-{% if not link %}{% set link = 'index-explanation' %}{% endif %}
-{% if not currentPage %}{% set currentPage = "index" %}{% endif %}
-{% if not pageTitle %}{% set pageTitle = "Examples of complex information" %}{% endif %}
-{% set section = "Accordion" %}
-
-{% extends "layouts/bespoke.html" %}
+{% set pageTitle= "Content (accordion)" %}
+{% extends "layouts/information-page.html" %}
 
 
-{% block form %}
+{% block description %}
 
-<h1 class="govuk-heading-l">
-   {{pageTitle}}
-</h1>
 
-<P>This information is here.</p>
 
-{{ govukAccordion({
-  id: "accordion-default",
-  items: [
-    {
-      heading: {
-        text: "Writing well for the web"
-      },
-      content: {
-        html: '<p class="govuk-body">This is the content for Writing well for the web.</p>'
-      }
-    },
-    {
-      heading: {
-        text: "Writing well for specialists"
-      },
-      content: {
-        html: '<p class="govuk-body">This is the content for Writing well for specialists.</p>'
-      }
-    },
-    {
-      heading: {
-        text: "Know your audience"
-      },
-      content: {
-        html: '<p class="govuk-body">This is the content for Know your audience.</p>'
-      }
-    },
-    {
-      heading: {
-        text: "How people read"
-      },
-      content: {
-        html: '<p class="govuk-body">This is the content for How people read.</p>'
-      }
-    }
-  ]
-}) }}
+ <p>Examples of a lot of information and how it can get presented on the page.</p>
 
 
 

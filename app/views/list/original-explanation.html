@@ -1,0 +1,25 @@
+{% set link = 'accessible' %}
+{% set currentPage = "original-explanation" %}
+
+{% set explanationDescription = "This is coded as a table rather than a definition list. Table are far more 'noisy' for screen reader users as they read out row and columns, and the table caption doubling as a page title may also confuse sighted screen reader users. Months are also easier to check and avoid ambiguity if they are shown using words." %}
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+
+
+{% set explanationLinks =  [
+
+  {
+    text: vars['reference']['tables']['text'] ,
+    href: vars['reference']['tables']['href']
+  },
+  {
+    text: vars['reference']['definition-lists']['text'] ,
+    href: vars['reference']['definition-lists']['href']
+  },
+  {
+    text: vars['reference']['dates']['text'] ,
+    href: vars['reference']['dates']['href']
+  }
+]
+%}
+
+{% extends "/" + folder +  "/original.html" %}

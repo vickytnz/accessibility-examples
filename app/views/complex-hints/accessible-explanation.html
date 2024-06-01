@@ -1,17 +1,18 @@
-{% set link = 'index' %}
+{% set link = 'original' %}
 {% set currentPage = "accessible-explanation" %}
 {% set explanation = "accessible" %}
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
 
 {% set explanationDescription = "Simple hints will be read out as expected by screen readers. If the input needs significant guidance and links, it should be rewritten as a complex question." %}
 
 {% set explanationLinks =  [
   {
-    text: "Making legends and labels headings on GOV.UK",
-    href: "https://design-system.service.gov.uk/get-started/labels-legends-headings/"
+    text: vars['reference']['legends']['text'] ,
+    href: vars['reference']['legends']['href']
   },
   {
-    text: "Find out about complex question pages on GOV.UK",
-    href: "https://design-system.service.gov.uk/patterns/question-pages/#asking-complex-questions-without-using-hint-text"
+    text: vars['reference']['complex-questions']['text'] ,
+    href: vars['reference']['complex-questions']['href']
   }
 
 ]

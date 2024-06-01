@@ -1,0 +1,76 @@
+{% if not link %}{% set link = 'original-explanation' %}{% endif %}
+{% if not currentPage %}{% set currentPage = "original" %}{% endif %}
+{% if not pageTitle %}{% set pageTitle = "Check previous details" %}{% endif %}
+{% set section = "Lists and dates" %}
+
+{% extends "layouts/bespoke.html" %}
+
+
+{% block form %}
+
+
+
+        {{ govukTable({
+      caption: pageTitle,
+      captionClasses: "govuk-table__caption--l",
+      firstCellIsHeader: true,
+      rows: [
+        [
+          {
+            text: "Name"
+          },
+          {
+            text: "Sarah Philips"
+          }
+        ],
+        [
+          {
+            text: "Date of birth"
+          },
+          {
+            text: "5 1 1978"
+          }
+        ],
+        [
+          {
+            text: "Address"
+          },
+          {
+            html: "72 Guild Street<br>London<br>SE23 6FH"
+          }
+        ],
+        [
+          {
+            text: "Contact details"
+          },
+          {
+            html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+          }
+        ]
+      ]
+    }) }}
+
+
+    {{ govukRadios({
+             name: "details",
+             fieldset: {
+               legend: {
+                 text: "Are these details correct?",
+                 isPageHeading: false,
+                 classes: "govuk-fieldset__legend--m"
+               }
+             },
+             items: [
+               {
+                 value: "yes",
+                 text: "Yes"
+               },
+               {
+                 value: "no",
+                 text: "No"
+               }
+             ]
+           }) }}
+
+
+{% endblock %}

@@ -1,13 +1,17 @@
-{% set link = 'index' %}
+{% set link = 'original' %}
 {% set currentPage = "accessible-explanation" %}
 {% set explanation = "accessible" %}
 
 {% set explanationDescription = "A dedicated text label helps announce it in context - and having this visible rather than hidden in aria text helps the page work just as well for everyone." %}
 
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+
+
 {% set explanationLinks =  [
+
   {
-    text: "Find out about text input on GOV.UK",
-    href: "https://design-system.service.gov.uk/components/text-input/"
+    text: vars['reference']['text-input']['text'] ,
+    href: vars['reference']['text-input']['href']
   }
 ]
 %}

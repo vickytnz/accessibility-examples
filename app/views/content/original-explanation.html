@@ -1,17 +1,19 @@
 {% set link = 'accessible' %}
-{% set currentPage = "index-explanation" %}
-
+{% set currentPage = "original-explanation" %}
 {% set explanationDescription = "Accordions hide key information that may be necessary for everyone. While there may be uses for accordions in some scenarios like caseworking systems, generally it is better to start by either no content and adding when there is a need, or all content and using headers, links and occasional details text." %}
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+
 
 {% set explanationLinks =  [
 
   {
-    text: "Accordions on the GOV.UK Design System",
-    href: "https://design-system.service.gov.uk/components/accordion/"
+    text: vars['reference']['accordions']['text'] ,
+    href: vars['reference']['accordions']['href']
   },
-  { text: "Don't be afraid of the big long page by Amy Hupe and Caroline Jarrett",
-    href: "https://amyhupe.co.uk/articles/dont-be-afraid-of-the-big-long-page/"
-}
+  {
+    text: vars['reference']['long-page']['text'] ,
+    href: vars['reference']['long-page']['href']
+  }
 ]
 %}
-{% include "/" + folder +  "/index.html" %}
+{% extends "/" + folder +  "/original.html" %}

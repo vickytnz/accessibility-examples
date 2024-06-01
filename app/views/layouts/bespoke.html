@@ -2,25 +2,28 @@
 For guidance on how to use layouts see:
 https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
+{% import '_vars.html' as vars %}
+
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 <!-- if you have added a new section you will need to add the name of it and the URL to the title array. There must be a comma between each object but none after the last one- people often get this wrong -->
 
 {% set title = [
+
+  {name: 'Asking for information', url: "asking-information"},
+  {name: 'Complex hints', url: "complex-hints"},
   {name: 'Content (accordions)', url: "content"},
   {name: 'Lists and dates', url: "list"},
   {name: 'Complex question', url: "complex-question"},
-  {name: 'Label position', url: "label-position"},
-  {name: 'Complex hints', url: "complex-hints"},
-  {name: 'Asking for information', url: "information"}
+  {name: 'Label position', url: "label-position"}
   ] %}
 
 <!-- as long as you haven't  -->
 
   {% set list = [
-    {name: 'Original', url: 'index'},
-    {name: 'Original (with explanation)', url: 'index-explanation'},
+    {name: 'Original', url: 'original'},
+    {name: 'Original (with explanation)', url: 'original-explanation'},
     {name: 'Accessible', url: 'accessible'},
     {name: 'Accessible (with explanation)', url: 'accessible-explanation'}
   ] %}
@@ -31,14 +34,15 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   {% endblock %}
 
 
+
+
+
 {% block beforeContent %}
 
-{{ govukPhaseBanner({
-  tag: {
-    text: "Example"
-  },
-  html: 'This is not a real service – it is just for training purposes.'
-}) }}
+
+
+
+
 
 {% block headIcons %}
 <link rel="apple-touch-icon" sizes="180x180" href="{{asset_path}}favicon/apple-touch-icon.png">
@@ -47,37 +51,33 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 <link rel="manifest" href="{{asset_path}}favicon/site.webmanifest">
 {% endblock %}
 
-{% if not backHidden %}
+{% if not (pageName == "Home") %}
 
-
-<nav class="option-toggle" aria-label="Option switcher">
-  <ul class="option-toggle-select__list">
-
-    {% for item in list %}
-
-    <li class="option-toggle-select__list-item">
-
-{% if not (item.url == currentPage ) %}
-      <a href="{{item.url}}" rclass="govuk-link">
-
-        <span class="govuk-visually-hidden">Change to</span>
-{% endif %}
-        <span aria-hidden="true">{{item.name}}</span>
-{% if not (item.url == currentURL ) %}           </a> {% endif %}
-    </li>
-
-{% endfor %}
-  </ul>
-</nav>
-
-<!--
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
+{% if section %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: section,
+      href: "index"
+    }
+  ]
 }) }}
--->
-
+{% else %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    }
+  ]
+}) }}
 {% endif %}
+{% endif %}
+
 {% endblock %}
 
 
@@ -89,12 +89,56 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   <div class="govuk-header__container govuk-width-container" style="border-bottom: 10px solid #6f72af">
     <div class="govuk-header__logo">
       <a href="/" class="govuk-header__link govuk-header__link--homepage">
-      {{serviceName}}
+       <span  class="govuk-header__product-name" >
+      {{serviceName}}</span>
       </a>
     </div>
   </div>
 </header>
 
+<!--
+<style>
+  .app-header--full-width-border {
+    border-bottom: 10px solid #1f70b8;
+  }
+.app-phase-banner–no-border {
+
+border-bottom: none;
+
+}
+
+</style>
+
+{{ govukPhaseBanner({
+  classes: "app-phase-banner–no-border govuk-width-container",
+  tag: {
+    text: "Example"
+  },
+  html: 'This is not a real service – it is just for training purposes.'
+}) }}
+-->
+
+
+{{ xGovukPrimaryNavigation({
+
+visuallyHiddenTitle: "Navigation",
+items: [{
+current: "true" if pageName == "Home" else false,
+text: "Home",
+href: "/"
+}, {
+current: "true" if pageName == "Using these examples" else false,
+text: "Using these examples",
+href: "/using-examples"
+
+}, {
+current: "true" if pageName == "Contribute" else false,
+text: "Contribute",
+href: "/contribute"
+
+}]
+
+}) }}
 
 
 
@@ -110,9 +154,10 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
+{% if not formHidden %}
 
       <form class="form" action="/{{folder}}/{{link}}" method="post">
+{% endif %}
 
 {% if explanationDescription %}
 
@@ -141,7 +186,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
       {% for item in explanationLinks %}
       {% if item.href %}
       <li>
-        <a href="{{item.href}}">{{item.text | default("More details on GOV.UK")}}</a>
+        <a href="{{item.href | safe }}">{{item.text | default("More details on GOV.UK")}}</a>
       </li>
       {% else %}
       {{item.text | default("More details on GOV.UK")}}
@@ -168,11 +213,13 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
         {% for item in explanationLinks %}
         {% if item.href %}
+
+
         <li>
           <a href="{{item.href}}">{{item.text | default("More details on GOV.UK")}}</a>
         </li>
         {% else %}
-        {{item.text | default("More details on GOV.UK")}}
+        {{item.text | safe | default("More details on GOV.UK")}}
         {% endif  %}
 {% endfor %}
       </ul>
@@ -191,14 +238,23 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% endblock %}
 
-{% if link == "index-explanation" %}{% set next = " to accessibility problems" %}{% elif  link == "accessible"  %}{% set next = " to more accessible version" %}{% elif  link == "accessible-explanation"  %}{% set next = " to explanation of improvements" %}{% else %}{% set next = " to original" %}{% endif %}
+{% if not formHidden %}
+
+{% if link == "original-explanation" %}{% set next = " to accessibility problems" %}{% elif  link == "accessible"  %}{% set next = " to more accessible version" %}{% elif  link == "accessible-explanation"  %}{% set next = " to explanation of improvements" %}{% else %}{% set next = " to original" %}{% endif %}
 
         {{ govukButton({
           text: "Go" + next
         }) }}
 
       </form>
-<p><a href="/index">Go to home page </a></p>
+
+{% endif %}
+<p><a href="{% if not section%}/{% else %}index{% endif %}">Return to {% if section %}example {% endif %}home page</a></p>
+
+
+
+
+
     </div>
   </div>
 {% endblock %}
@@ -208,50 +264,71 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   <div class="govuk-width-container">
     <div class="govuk-footer__navigation">
       <div class="govuk-footer__section govuk-grid-column-two-thirds" >
+        {% if not backHidden %}
 
-        <h2 class="govuk-footer__heading govuk-heading-m">Notes</h2>
-    <!--    <ul class="govuk-footer__list">
-          <li class="govuk-footer__list-item">
-            <a href="/manage-prototype">Manage your prototype</a>
-          </li>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            Jump links for training purposes
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+          <ul class="govuk-list govuk-list--bullet">
+          <li class="govuk_list-item"><a href="index">Index page</a></li>
+            {% for item in list %}
+
+            <li class="govuk_list-item">
+
+        {% if not (item.url == currentPage ) %}
+              <a href="{{item.url}}" class="govuk-link">
+
+                <span class="govuk-visually-hidden">Change to</span>
+        {% endif %}
+                <span aria-hidden="true">{{item.name}}</span>
+        {% if not (item.url == currentURL ) %}           </a> {% endif %}
+            </li>
+
+        {% endfor %}
           </ul>
-      </div> -->
 
-      <P class="govuk-footer__meta-custom">Series of common accessibility mistakes on forms.</p>
-        <P class="govuk-footer__meta-custom">Built and hosted by Vicky Teinaki.</p>
-    <p>Contributors: Lori Thomson, Adam Liptrot, Caroline Jarrett. <a href="https://github.com/vickytnz/accessibility-examples">Find out how you can contribute on Github</a></p>
+        </div>
+        </details>
+
+
+        <!--
+          {{ govukBackLink({
+          text: "Back",
+          href: "javascript:window.history.back()"
+        }) }}
+        -->
+
+        {% endif %}
 
 
 <!--
-          <ul class="govuk-footer__list">
-
-        {% for item in title %}
-          <li class="govuk-footer__list-item "> {{ item.name }}:
-
-        {% for iterator in list %}
-              <a href="/{{item.url}}/{{iterator.url}}">{{iterator.name  }}</a>
-        {% endfor %}{% endfor %}
-        </li>
+        <h2 class="govuk-footer__heading govuk-heading-m">Links</h2>
+        <ul class="govuk-footer__list">
 
 
-              </ul> -->
+          {% set links = [
+            {name: 'Home', url: '/'},
+            {name: 'Site map', url: '/site-map'},
+            {name: 'Github reponsitory', url: 'https://github.com/vickytnz/accessibility-examples'}
+            ] %}
+
+            {% for iterator in links %}
+                  <li class="govuk-footer__list-item "> <a href="{{iterator.url}}">{{iterator.name  }}</a></li>
+            {% endfor %}
+            </ul>
+
+           -->
+<nav><ul class="govuk-list"><li><a href="/site-map">Site map</a></li><li> <a href="/manage-prototype/clear-data">Clear data</a></li></ul>
+</nav>
       </div>
       <div class="govuk-footer__section govuk-grid-column-one-third">
 
-      <h2 class="govuk-footer__heading govuk-heading-m">Links</h2>
-      <ul class="govuk-footer__list">
 
-
-        {% set links = [
-          {name: 'Home', url: '/'},
-          {name: 'Site map', url: '/site-map'},
-          {name: 'Github reponsitory', url: 'https://github.com/vickytnz/accessibility-examples'}
-          ] %}
-
-          {% for iterator in links %}
-                <li class="govuk-footer__list-item "> <a href="{{iterator.url}}">{{iterator.name  }}</a>
-          {% endfor %}
-          </li>
     </div>
 
 

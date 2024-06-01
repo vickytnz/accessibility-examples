@@ -3,14 +3,17 @@
 {% set explanation = "accessible" %}
 
 {% set explanationDescription = "Using a definition list means that what is visually shown on the page is more aligned with what is read out on a screen reader, and the formatted month is easier to check." %}
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
 
-{% set explanationLinks =  [{
-    text: "Definition lists information the GOV.UK Design System",
-    href: "https://design-system.service.gov.uk/components/table/"
+
+{% set explanationLinks =  [
+  {
+    text: vars['reference']['definition-lists']['text'] ,
+    href: vars['reference']['definition-lists']['href']
   },
   {
-    text: "GOV.UK content guide for dates",
-    href: "https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style"
+    text: vars['reference']['dates']['text'] ,
+    href: vars['reference']['dates']['href']
   }
 ]
 %}

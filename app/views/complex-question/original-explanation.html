@@ -1,14 +1,16 @@
 {% set link = 'accessible' %}
 {% set currentPage = "index-explanation" %}
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+
 
 {% set explanationDescription = "A complex question must have a header, information and then the question - without this it is difficult for screen readers to show that there is context or for people with memory issues to remember what is being asked." %}
 
 {% set explanationLinks =  [
   {
-    text: "Find out about complex question pages on GOV.UK",
-    href: "https://design-system.service.gov.uk/patterns/question-pages/#asking-complex-questions-without-using-hint-text"
+    text: vars['reference']['complex-questions']['text'] ,
+    href: vars['reference']['complex-questions']['href']
   }
 ]
 %}
 
-{% include "/" + folder +  "/index.html" %}
+{% extends "/" + folder +  "/original.html" %}

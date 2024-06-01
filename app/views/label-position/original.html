@@ -1,15 +1,18 @@
-{% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
-{% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
-{% set pageTitle = "Tell us why you left your studies" %}
-{% extends "/" + folder +  "/original.html" %}
+{% if not link %}{% set link = 'original-explanation' %}{% endif %}
+{% if not currentPage %}{% set currentPage = "original" %}{% endif %}
+{% if not pageTitle %}{% set pageTitle = "Tell us why you left your studies" %}{% endif %}
+{% set section = "Label position" %}
+
+{% extends "layouts/bespoke.html" %}
 
 
 {% block form %}
 
       <h1 class="govuk-heading-l">
-{{pageTitle}}
+      {{pageTitle}}
       </h1>
 
+      <form class="form" action="/short-textinput" method="post">
 
         <p>Information</p>
 
@@ -33,9 +36,10 @@
         name: "moreDetail",
         id: "more-detail",
         label: {
-          text: "Give details about leaving studies"
+          text: ""
         }
       }) }}
+
 
 
 {% endblock %}

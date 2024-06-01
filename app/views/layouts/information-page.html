@@ -1,0 +1,30 @@
+{% set backHidden = true %}
+{% set formHidden = true %}
+{% extends "layouts/bespoke.html" %}
+
+
+{% block form %}
+
+      <h1 class="govuk-heading-l">
+       {{pageTitle}}
+      </h1>
+{% block description %}
+ <p>Add description here </p>
+
+{% endblock %}
+
+  <ol class="govuk-list govuk-list--number">
+    <li ><a href="original" class="govuk-link">Typical mistake we see (Original)</a></li>
+    <li > <a href="original-explanation" class="govuk-link"> Why we think it's problematic (Original with explanation) </a> </li>
+    <li > <a href="accessible" class="govuk-link"> More accessible version </a> </li>
+    <li > <a href="accessible-explanation" class="govuk-link"> Why the accessible version is better (Accessible with explanation)
+           </a>
+    </li>
+     </ol>
+
+
+
+
+
+
+{% endblock %}

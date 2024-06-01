@@ -1,17 +1,21 @@
-{% set link = 'index' %}
+{% set link = 'original' %}
 {% set currentPage = "accessible-explanation" %}
 {% set explanation = "accessible" %}
 {% set explanationDescription = "Showing information as a start helps everyone get the information - if there is too much information then the page needs to be redesigned." %}
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+
 
 {% set explanationLinks =  [
 
   {
-    text: "NHS service manual on how to write good questions for forms",
-    href: "https://service-manual.nhs.uk/content/how-to-write-good-questions-for-forms"
+    text: vars['reference']['nhs-forms']['text'] ,
+    href: vars['reference']['nhs-forms']['href']
   },
-  { text: "Don't be afraid of the big long page by Amy Hupe and Caroline Jarrett",
-    href: "https://amyhupe.co.uk/articles/dont-be-afraid-of-the-big-long-page/"
-}
+  {
+    text: vars['reference']['long-page']['text'] ,
+    href: vars['reference']['long-page']['href']
+  }
 ]
 %}
+
 {% include "/" + folder +  "/accessible.html" %}

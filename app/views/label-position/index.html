@@ -1,44 +1,12 @@
-{% if not link %}{% set link = 'index-explanation' %}{% endif %}
-{% if not currentPage %}{% set currentPage = "index" %}{% endif %}
-{% if not pageTitle %}{% set pageTitle = "Tell us why you left your studies" %}{% endif %}
-{% set section = "Long textarea" %}
-
-{% extends "layouts/bespoke.html" %}
+{% set pageTitle = "Label position" %}
+{% extends "layouts/information-page.html" %}
 
 
-{% block form %}
-
-      <h1 class="govuk-heading-l">
-      {{pageTitle}}
-      </h1>
-
-      <form class="form" action="/short-textinput" method="post">
-
-        <p>Information</p>
-
-          <ul class="govuk-list govuk-list--bullet">
-            <li>list item</li>
-            <li>list item</li>
-            <li>list item</li>
-          </ul>
-
-          <p>Information</p>
-
-            <ul class="govuk-list govuk-list--bullet">
-              <li>list item</li>
-              <li>list item</li>
-              <li>list item</li>
-            </ul>
+{% block description %}
 
 
 
-            {{ govukTextarea({
-        name: "moreDetail",
-        id: "more-detail",
-        label: {
-          text: ""
-        }
-      }) }}
+ <p>Examples of input fields with a lot of information around it.</p>
 
 
 

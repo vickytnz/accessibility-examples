@@ -1,0 +1,16 @@
+{% set link = 'accessible' %}
+{% set currentPage = "original-explanation" %}
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+
+{% set explanationDescription = "Hints (information between the input legend and the input field) must be simple without complex formatting or links. If extra formatting like lists and links are put in the hint area between an input legend and the input, a screenreader may not read them correctly." %}
+
+{% set explanationLinks =  [
+  {
+    text: vars['reference']['question-pages']['text'] ,
+    href: vars['reference']['question-pages']['href']
+  }
+]
+%}
+
+
+{% extends "/" + folder +  "/original.html" %}

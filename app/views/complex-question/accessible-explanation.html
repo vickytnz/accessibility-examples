@@ -1,13 +1,15 @@
-{% set link = 'index' %}
+{% set link = 'original' %}
 {% set currentPage = "accessible-explanation" %}
 {% set explanation = "accessible" %}
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+
 
 {% set explanationDescription = "Structuring the page to have header, details and question helps screen readers, audio announcers and general ease of memory. Links will also be announced by a screen reader before the question." %}
 
 {% set explanationLinks =  [
   {
-    text: "Find out about complex question pages on GOV.UK",
-    href: "https://design-system.service.gov.uk/patterns/question-pages/#asking-complex-questions-without-using-hint-text"
+    text: vars['reference']['complex-questions']['text'] ,
+    href: vars['reference']['complex-questions']['href']
   }
 ]
 %}

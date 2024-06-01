@@ -1,0 +1,17 @@
+{% set link = 'accessible' %}
+{% set currentPage = "original-explanation" %}
+
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+
+
+{% set explanationDescription = "If a page is both giving information on context, it puts stress on people who cannot skip between the information and question easily." %}
+
+{% set explanationLinks =  [
+  {
+    text: vars['reference']['form-structure']['text'] ,
+    href: vars['reference']['form-structure']['href']
+  }
+]
+%}
+
+{% extends "/" + folder +  "/original.html" %}

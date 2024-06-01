@@ -2,6 +2,8 @@
 
 {% set link = 'accessible' %} <!-- Don't change this -->
 {% set currentPage = "index-explanation" %} <!-- Don't change this -->
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+
 
 {% set explanationDescription = "[ADD TEXT HERE - it does not allow for paragraphs right now]" %} <!-- you must have this section, change text as needed-->
 
@@ -20,4 +22,4 @@
 
 
 <!-- this inherits the code from index.html so you don't need to do it twice -->
-{% include "/" + folder +  "/index.html" %}
+{% extends "/" + folder +  "/original.html" %}

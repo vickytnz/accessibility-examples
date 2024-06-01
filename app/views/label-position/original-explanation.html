@@ -1,0 +1,21 @@
+{% set link = 'accessible' %}
+{% set currentPage = "original-explanation" %}
+
+{% set explanationDescription = "If an input field needs a lot of supporting guidance, it is a complex question and therefore needs a statement and a header before the input" %}
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+
+
+{% set explanationLinks =  [
+
+  {
+    text: vars['reference']['text-input']['text'] ,
+    href: vars['reference']['text-input']['href']
+  },
+  {
+    text: vars['reference']['complex-questions']['text'] ,
+    href: vars['reference']['complex-questions']['href']
+  }
+]
+%}
+
+{% extends "/" + folder +  "/original.html" %}

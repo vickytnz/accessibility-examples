@@ -1,58 +1,12 @@
-{% if not link %}{% set link = 'index-explanation' %}{% endif %}
-{% if not currentPage %}{% set currentPage = "index" %}{% endif %}
-{% if not pageTitle %}{% set pageTitle = "[What is your question?]" %}{% endif %}
-{% set section = "Long question" %}
-
-{% extends "layouts/bespoke.html" %}
+{% set pageTitle = "Complex question" %}
+{% extends "layouts/information-page.html" %}
 
 
-{% block form %}
-
-      <h1 class="govuk-heading-l">
-        {{pageTitle}}
-      </h1>
-
-
-        <p>Information</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>list item</li>
-          <li>list item</li>
-          <li>list item</li>
-        </ul>
-
-
-        <p>Information</p>
-
-          <ul class="govuk-list govuk-list--bullet">
-            <li>list item</li>
-            <li>list item</li>
-            <li>list item</li>
-          </ul>
+{% block description %}
 
 
 
-        {{ govukRadios({
-                 name: "higher-further-education",
-                 fieldset: {
-                   legend: {
-                     text: "",
-                     isPageHeading: false,
-                     classes: "govuk-fieldset__legend--m"
-                   }
-                 },
-                 items: [
-                   {
-                     value: "yes",
-                     text: "Yes"
-                   },
-                   {
-                     value: "no",
-                     text: "No"
-                   }
-                 ]
-               }) }}
-
+ <p>Example of a complex question with a lot of supporting information around it. </p>
 
 
 

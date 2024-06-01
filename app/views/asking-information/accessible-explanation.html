@@ -1,0 +1,21 @@
+{% set link = 'original' %}
+{% set currentPage = "accessible-explanation" %}
+{% set explanation = "accessible" %}
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+
+
+{% set explanationDescription = "Giving people a separate point to read information helps the focus on one thing at a time." %}
+
+{% set explanationLinks =  [
+  {
+    text: vars['reference']['question-pages']['text'] ,
+    href: vars['reference']['question-pages']['href']
+  },
+  {
+    text: vars['reference']['interruption-pages']['text'] ,
+    href: vars['reference']['interruption-pages']['href']
+  }
+]
+%}
+
+{% include "/" + folder +  "/accessible.html" %}

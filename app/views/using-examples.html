@@ -1,0 +1,48 @@
+{% set backHidden = true %}
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+{% extends "layouts/bespoke.html" %}
+
+{% set pageName="Using these examples" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">
+  Using these examples
+    </h1>
+
+<p>These examples are set up to help people learn experientially. It can either be used as self-reflection or as a teaching tool.</p>
+
+<p>Examples cycle through:</p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>a common accessibilty mistake</li>
+  <li>the same version with an explanation</li>
+  <li>a better version</li>
+  <li>the better version with an explanation of the changes</li>
+  </ul>
+
+<!--  list of all examples -->
+
+<h2 class="govuk-heading-m">
+Full list of references
+</h2>
+<p>These references are shown on the explanation pages for either the original or accessible example. Some references are used in multiple examples.</p>
+  <ul class="govuk-list govuk-list--bullet">
+    {% for key, item in vars['reference'] %} <!-- We could do this in the data defaults but in nunjucks is easier to update-->
+
+    <li class="govuk_list-item">
+      <a href="{{item['href'] | safe }}" class="govuk-link">{{item['text'] | safe }}
+    </li>
+
+{% endfor %}
+  </ul>
+
+</div>
+</div>
+
+{% endblock %}
