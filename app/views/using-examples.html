@@ -36,7 +36,7 @@ Full list of references
     {% for key, item in vars['reference'] %} <!-- We could do this in the data defaults but in nunjucks is easier to update-->
 
     <li class="govuk_list-item">
-      <a href="{{item['href'] | safe }}" class="govuk-link">{{item['text'] | safe }}
+      <a href="{{item['href'] | safe }}" class="govuk-link">{{item['text'] | safe }}</a>
     </li>
 
 {% endfor %}
