@@ -33,7 +33,8 @@ Full list of references
 </h2>
 <p>These references are shown on the explanation pages for either the original or accessible example. Some references are used in multiple examples.</p>
   <ul class="govuk-list govuk-list--bullet">
-    {% for key, item in vars['reference'] %} <!-- We could do this in the data defaults but in nunjucks is easier to update-->
+    {#  List of references is in a file and called by Nunjucks, this could be done with something in app/data/session-data-defaults.js but this is easier to maintain #}
+    {% for key, item in vars['reference'] %} 
 
     <li class="govuk_list-item">
       <a href="{{item['href'] | safe }}" class="govuk-link">{{item['text'] | safe }}</a>

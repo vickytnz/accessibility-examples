@@ -1,0 +1,17 @@
+<!-- most of the logic (form action, button logic) is automatically inherited from layouts/bespoke.html -->
+{% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
+{% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
+{% set pageTitle = "[statement]" %}
+{% extends "/" + folder +  "/original.html" %}
+
+
+{% block form %}
+<!-- The version can be as different from the original version as you want, you have complete control over the code -->
+      <h1 class="govuk-heading-l">
+        {{pageTitle}}
+      </h1>
+
+
+<p>example here</p>
+
+{% endblock %}
