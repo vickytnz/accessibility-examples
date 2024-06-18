@@ -2,7 +2,7 @@
 {% set currentPage = "accessible-explanation" %}
 {% set explanation = "accessible" %}
 
-{% set explanationDescription = "Using a definition list means that what is visually shown on the page is more aligned with what is read out on a screen reader, and the formatted month is easier to check." %}
+{% set explanationDescription = "Using a definition list means that what is visually shown on the page is more aligned with what is read out on a screen reader." %}
 {% import '_vars.html' as vars %} {# this page has all the references for links #}
 
 
@@ -10,10 +10,6 @@
   {
     text: vars['reference']['definition-lists']['text'] ,
     href: vars['reference']['definition-lists']['href']
-  },
-  {
-    text: vars['reference']['dates']['text'] ,
-    href: vars['reference']['dates']['href']
   }
 ]
 %}

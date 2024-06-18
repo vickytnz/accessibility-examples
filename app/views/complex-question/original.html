@@ -1,6 +1,6 @@
 {% if not link %}{% set link = 'original-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "original" %}{% endif %}
-{% if not pageTitle %}{% set pageTitle = "[What is your question?]" %}{% endif %}
+{% if not pageTitle %}{% set pageTitle = "Do you know the gender of the goose?" %}{% endif %}
 {% set section = "Long question" %}
 
 {% extends "layouts/bespoke.html" %}
@@ -12,23 +12,11 @@
         {{pageTitle}}
       </h1>
 
+<!--       <p>You can get help to figure out what type of goose it is with <a href="https://www.countryfile.com/wildlife/how-to-identify/guide-to-britains-geese-how-to-identify-and-where-to-see">guidance from BBC Countryfile.</a></P>
+-->
 
-        <p>Information</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>list item</li>
-          <li>list item</li>
-          <li>list item</li>
-        </ul>
-
-
-        <p>Information</p>
-
-          <ul class="govuk-list govuk-list--bullet">
-            <li>list item</li>
-            <li>list item</li>
-            <li>list item</li>
-          </ul>
+<p>If you can tell the gender of the goose, this will help us monitor the gender mix of the goose population.</P>
+  <p>A male goose is normally larger than a female goose, has a deeper honk and may be more agressive.</p>
 
 
 
@@ -43,11 +31,11 @@
                  },
                  items: [
                    {
-                     value: "yes",
+                     value: "Yes",
                      text: "Yes"
                    },
                    {
-                     value: "no",
+                     value: "No",
                      text: "No"
                    }
                  ]
@@ -55,5 +43,66 @@
 
 
 
+
+<!--
+
+        {{ govukRadios({
+                 name: "goose0types",
+                 fieldset: {
+                   legend: {
+                     text: "",
+                     isPageHeading: false,
+                     classes: "govuk-fieldset__legend--m"
+                   }
+                 },
+                 items: [
+                   {
+                     value: "White-fronted goose",
+                     text: "White-fronted goose"
+                   },
+                   {
+                     value: "Barnacle goose",
+                     text: "Barnacle goose"
+                   },
+                   {
+                     value: "Brent goose",
+                     text: "Brent goose"
+                   },
+                   {
+                     value: "Barnacle goose",
+                     text: "Barnacle goose"
+                   },
+                   {
+                     value: "Greylag goose",
+                     text: "Greylag goose"
+                   },
+                   {
+                     value: "Canada goose",
+                     text: "Canada goose"
+                   },
+                   {
+                     value: "Bean goose",
+                     text: "Bean goose"
+                   },
+                   {
+                     value: "Pink-footed goose",
+                     text: "Pink-footed goose"
+                   },
+                   {
+                     value: "Egyptian goose",
+                     text: "Egyptian goose"
+                   },
+                   {
+  divider: "or"
+},
+                   {
+                     value: "Not sure",
+                     text: "Not sure"
+                   }
+                 ]
+               }) }}
+
+
+-->
 
 {% endblock %}

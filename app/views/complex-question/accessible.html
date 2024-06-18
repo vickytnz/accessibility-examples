@@ -1,54 +1,41 @@
 {% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
-{% set pageTitle = "[statement]" %}
+{% set pageTitle = "Gender of the goose" %}
 {% extends "/" + folder +  "/original.html" %}
 
 
 {% block form %}
-
-      <h1 class="govuk-heading-l">
-        {{pageTitle}}
-      </h1>
-
+<h1 class="govuk-heading-l">
+ {{pageTitle}}
+</h1>
 
 
-
-          <ul class="govuk-list govuk-list--bullet">
-            <li>list item</li>
-            <li>list item</li>
-            <li>list item</li>
-          </ul>
+<p>If you can tell the gender of the goose, this will help us monitor the gender mix of the goose population.</P>
+  <p>A male goose is normally larger than a female goose, has a deeper honk and may be more agressive.</p>
 
 
-          <p>Information</p>
-
-            <ul class="govuk-list govuk-list--bullet">
-              <li>list item</li>
-              <li>list item</li>
-              <li>list item</li>
-            </ul>
 
 
-        {{ govukRadios({
-                 name: "higher-further-education",
-                 fieldset: {
-                   legend: {
-                     text: "[question name?]",
-                     isPageHeading: false,
-                     classes: "govuk-fieldset__legend--m"
-                   }
-                 },
-                 items: [
-                   {
-                     value: "yes",
-                     text: "Yes"
-                   },
-                   {
-                     value: "no",
-                     text: "No"
-                   }
-                 ]
-               }) }}
+  {{ govukRadios({
+           name: "higher-further-education",
+           fieldset: {
+             legend: {
+               text: "Do you know the gender of the goose?",
+               isPageHeading: false,
+               classes: "govuk-fieldset__legend--m"
+             }
+           },
+           items: [
+             {
+               value: "Yes",
+               text: "Yes"
+             },
+             {
+               value: "No",
+               text: "No"
+             }
+           ]
+         }) }}
 
 
 {% endblock %}
