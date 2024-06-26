@@ -14,10 +14,10 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   {name: 'Asking for information', url: "asking-information"},
   {name: 'Complex hints', url: "complex-hints"},
   {name: 'Content (accordions)', url: "content"},
-
   {name: 'Lists', url: "list"},
   {name: 'Complex question', url: "complex-question"},
-  {name: 'Label position', url: "label-position"}
+  {name: 'Label position', url: "label-position"},
+  {name: 'World column width', url: "widths-word-lengths"}
   ] %}
 
 {#   {name: 'Content (tabs)', url: "content-tabs"}, #}
@@ -154,7 +154,7 @@ href: "/contribute"
 
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column{% if pageWidth == 'full' %}-full{% else %}-two-thirds{% endif %}">
 
 {% if not formHidden %}
 
@@ -206,7 +206,7 @@ href: "/contribute"
 <div class="govuk-error-summary" data-module="govuk-error-summary">
   <div role="alert">
     <h2 class="govuk-error-summary__title">
-      Accessibility problems with this page
+      How this page creates barriers for some users
     </h2>
     <div class="govuk-error-summary__body">
       <P>{{explanationDescription}}</P>

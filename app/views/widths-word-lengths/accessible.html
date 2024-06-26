@@ -1,0 +1,18 @@
+{% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
+{% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
+{% set pageTitle = "Telling us about your accessibility experience" %}
+{% set pageWidth = "regular" %}
+{% extends "/" + folder +  "/original.html" %}
+
+
+{% block form %}
+
+      <h1 class="govuk-heading-l">
+        {{pageTitle}}
+      </h1>
+
+
+      <p>If you have information about multiple dates of accessibility training, start with the first example. You can add the other examples after you have completed the first one.</p>
+
+
+{% endblock %}

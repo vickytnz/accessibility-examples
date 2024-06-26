@@ -1,0 +1,21 @@
+{% set link = 'accessible' %}
+{% set currentPage = "original-explanation" %}
+
+{% import '_vars.html' as vars %} {# this page has all the references for links #}
+
+
+{% set explanationDescription = "On larger screens the paragraph text is 118 characters long. This is nearly double the ideal maximum 66 characters and well over the comfortable maximum of 85 characters. This means that people on larger computer screens will either struggle to read paragraphs of text, or have to resize their browser window to something smaller." %}
+
+{% set explanationLinks =  [
+  {
+    text: vars['reference']['word-column-width-typography']['text'] ,
+    href: vars['reference']['word-column-width-typography']['href']
+  },
+  {
+    text: vars['reference']['word-column-smashing']['text'] ,
+    href: vars['reference']['word-column-smashing']['href']
+  }
+]
+%}
+
+{% extends "/" + folder +  "/original.html" %}
