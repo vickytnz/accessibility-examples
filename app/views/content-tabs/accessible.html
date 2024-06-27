@@ -1,7 +1,7 @@
 <!-- most of the logic (form action, button logic) is automatically inherited from layouts/bespoke.html -->
 {% if not link %}{% set link = 'accessible-explanation' %}{% endif %}
 {% if not currentPage %}{% set currentPage = "accessible" %}{% endif %}
-{% set pageTitle = "[statement]" %}
+{% set pageTitle = "Bank details" %}
 {% extends "/" + folder +  "/original.html" %}
 
 
@@ -10,8 +10,29 @@
       <h1 class="govuk-heading-l">
         {{pageTitle}}
       </h1>
+  <p>Last updated 1 January 2025.</p>
+<hr>
+
+      <h2 class="govuk-heading-m">Current account balance</h2>
+      <p>Your balance is £1,929.32</p>
+    <!--  <p>Last updated 1 January 2025.</p> -->
+
+<hr>
 
 
-<p>example here</p>
+      <h2 class="govuk-heading-m">Savings account balance</h2>
+
+      <p>Your balance is £532.43</p>
+<!--      <p>Last updated 1 January 2025.</p> -->
+      <p>This account has a 5% AER interest rate</p>
+
+<hr>
+      <h2 class="govuk-heading-m">Credit card balance</h2>
+
+
+      <p>Your balance is -£231.99</p>
+<!--      <p>Last updated 1 January 2025.</p> -->
+      <p>This account has a 9% AER interest rate</p>
+<hr>
 
 {% endblock %}

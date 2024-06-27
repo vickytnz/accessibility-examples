@@ -1,7 +1,7 @@
 <!-- most of the logic (form action, button logic) is automatically inherited from layouts/bespoke.html -->
 {% if not link %}{% set link = 'original-explanation' %}{% endif %} <!-- link to page with explanation - you shouldn't need to change this -->
 {% if not currentPage %}{% set currentPage = "original" %}{% endif %}<!-- default page to link to - you shouldn't need to change this -->
-{% if not pageTitle %}{% set pageTitle = "[ADD PAGE TITLE]" %}{% endif %}<!-- page title that shows in tab title, you can also use {{pageTitle}} as a variable on this page so that it's consistent -->
+{% if not pageTitle %}{% set pageTitle = "Bank details" %}{% endif %}<!-- page title that shows in tab title, you can also use {{pageTitle}} as a variable on this page so that it's consistent -->
 {% set section = "Content (tabs)" %}<!-- title for section - what will also be shown tab title - this should be the name of the task. You only need to to this here and it will show up on the other pages  -->
 
 {% extends "layouts/bespoke.html" %}
@@ -10,239 +10,58 @@
 {% block form %}
 <!-- add or delete whatever code you want in this section - if it is from the govuk design system it will automatically work. If it needs custom CSS you will need to add it to app/assets/sass/scss -->
 
-{% set pastDayHtml %}
-<h2 class="govuk-heading-l">Past day</h2>
-{{ govukTable({
-  head: [
-    {
-      text: "Case manager"
-    },
-    {
-      text: "Cases opened"
-    },
-    {
-      text: "Cases closed"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Francis"
-      },
-      {
-        text: "3"
-      },
-      {
-        text: "0"
-      }
-    ],
-    [
-      {
-        text: "Paul Farmer"
-      },
-      {
-        text: "1"
-      },
-      {
-        text: "0"
-      }
-    ],
-    [
-      {
-        text: "Rita Patel"
-      },
-      {
-        text: "2"
-      },
-      {
-        text: "0"
-      }
-    ]
-  ]
-}) }}
-{% endset -%}
+
+<h1 class="govuk-heading-l">
+  {{pageTitle}}
+</h1>
 
 {% set pastWeekHtml %}
-<h2 class="govuk-heading-l">Past week</h2>
-{{ govukTable({
-  head: [
-    {
-      text: "Case manager"
-    },
-    {
-      text: "Cases opened"
-    },
-    {
-      text: "Cases closed"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Francis"
-      },
-      {
-        text: "24"
-      },
-      {
-        text: "18"
-      }
-    ],
-    [
-      {
-        text: "Paul Farmer"
-      },
-      {
-        text: "16"
-      },
-      {
-        text: "20"
-      }
-    ],
-    [
-      {
-        text: "Rita Patel"
-      },
-      {
-        text: "24"
-      },
-      {
-        text: "27"
-      }
-    ]
-  ]
-}) }}
+<h2 class="govuk-heading-m">Current account balance</h2>
+<p>Your balance is £1,929.32</p>
+<p>Last updated 1 January 2025.</p>
+
 {% endset -%}
 
 {% set pastMonthHtml %}
-<h2 class="govuk-heading-l">Past month</h2>
-{{ govukTable({
-  head: [
-    {
-      text: "Case manager"
-    },
-    {
-      text: "Cases opened"
-    },
-    {
-      text: "Cases closed"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Francis"
-      },
-      {
-        text: "98"
-      },
-      {
-        text: "95"
-      }
-    ],
-    [
-      {
-        text: "Paul Farmer"
-      },
-      {
-        text: "122"
-      },
-      {
-        text: "131"
-      }
-    ],
-    [
-      {
-        text: "Rita Patel"
-      },
-      {
-        text: "126"
-      },
-      {
-        text: "142"
-      }
-    ]
-  ]
-}) }}
+<h2 class="govuk-heading-m">Savings account balance</h2>
+
+<p>Your balance is £532.43</p>
+<p>Last updated 1 January 2025.</p>
+<p>This account has a 5% AER interest rate</p>
+
+
 {% endset -%}
 
 {% set pastYearHtml %}
-<h2 class="govuk-heading-l">Past year</h2>
-{{ govukTable({
-  head: [
-    {
-      text: "Case manager"
-    },
-    {
-      text: "Cases opened"
-    },
-    {
-      text: "Cases closed"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Francis"
-      },
-      {
-        text: "1380"
-      },
-      {
-        text: "1472"
-      }
-    ],
-    [
-      {
-        text: "Paul Farmer"
-      },
-      {
-        text: "1129"
-      },
-      {
-        text: "1083"
-      }
-    ],
-    [
-      {
-        text: "Rita Patel"
-      },
-      {
-        text: "1539"
-      },
-      {
-        text: "1265"
-      }
-    ]
-  ]
-}) }}
+<h2 class="govuk-heading-m">Credit card balance</h2>
+
+
+<p>Your balance is -£231.99</p>
+<p>Last updated 1 January 2025.</p>
+<p>This account has a 9% AER interest rate</p>
+
+
 {% endset -%}
 
 {{ govukTabs({
   items: [
+
     {
-      label: "Past day",
-      id: "past-day",
-      panel: {
-        html: pastDayHtml
-      }
-    },
-    {
-      label: "Past week",
+      label: "Current account",
       id: "past-week",
       panel: {
         html: pastWeekHtml
       }
     },
     {
-      label: "Past month",
+      label: "Savings account",
       id: "past-month",
       panel: {
         html: pastMonthHtml
       }
     },
     {
-      label: "Past year",
+      label: "Credit card",
       id: "past-year",
       panel: {
         html: pastYearHtml
